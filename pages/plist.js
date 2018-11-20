@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import { withI18next } from '../lib/withI18next'
+import Head from 'next/head'
 
 import {Header, Footer, ProjectCard, CatalogItem, Preloader, OrderModal} from "../common";
 import firebase from "../api/firebase";
@@ -38,6 +39,10 @@ class plist extends Component {
         return(
 
             <div className="ProjectList">
+                <Head>
+                    <title>My page title</title>
+                    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+                </Head>
                 {this.state.loading && <Preloader></Preloader>}
                 <Header bgColor={"#000"}/>
                 <div className="info-project-list d-flex flex-column align-items-center">

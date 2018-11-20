@@ -449,11 +449,34 @@ function (_Component) {
           color: textColor
         },
         href: "mailto:contacts@press.kz"
-      }, "contacts@press.kz")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, "contacts@press.kz"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "d-flex"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        style: {
+          color: textColor
+        },
+        onClick: function onClick() {
+          return _this2.changeLanguage("ru-RU");
+        }
+      }, "RU"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "mx-2"
+      }, " / "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        style: {
+          color: textColor
+        },
+        onClick: function onClick() {
+          return _this2.changeLanguage("en");
+        }
+      }, "EN"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "mx-2"
+      }, " / "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        style: {
+          color: textColor
+        },
         onClick: function onClick() {
           return _this2.changeLanguage("gr");
         }
-      }, "gr"))));
+      }, "GR"))))));
     }
   }]);
 
@@ -951,6 +974,17 @@ var withI18next = function withI18next() {
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/array/from.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/core-js/array/from.js ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! core-js/library/fn/array/from */ "./node_modules/core-js/library/fn/array/from.js");
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime-corejs2/core-js/array/is-array.js":
 /*!***********************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/core-js/array/is-array.js ***!
@@ -970,6 +1004,17 @@ module.exports = __webpack_require__(/*! core-js/library/fn/array/is-array */ ".
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(/*! core-js/library/fn/get-iterator */ "./node_modules/core-js/library/fn/get-iterator.js");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/is-iterable.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/core-js/is-iterable.js ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! core-js/library/fn/is-iterable */ "./node_modules/core-js/library/fn/is-iterable.js");
 
 /***/ }),
 
@@ -1141,6 +1186,29 @@ function _arrayWithHoles(arr) {
 }
 
 module.exports = _arrayWithHoles;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/helpers/arrayWithoutHoles.js":
+/*!**************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/helpers/arrayWithoutHoles.js ***!
+  \**************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var _Array$isArray = __webpack_require__(/*! ../core-js/array/is-array */ "./node_modules/@babel/runtime-corejs2/core-js/array/is-array.js");
+
+function _arrayWithoutHoles(arr) {
+  if (_Array$isArray(arr)) {
+    for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) {
+      arr2[i] = arr[i];
+    }
+
+    return arr2;
+  }
+}
+
+module.exports = _arrayWithoutHoles;
 
 /***/ }),
 
@@ -1441,6 +1509,25 @@ module.exports = _interopRequireWildcard;
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime-corejs2/helpers/iterableToArray.js":
+/*!************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/helpers/iterableToArray.js ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var _Array$from = __webpack_require__(/*! ../core-js/array/from */ "./node_modules/@babel/runtime-corejs2/core-js/array/from.js");
+
+var _isIterable = __webpack_require__(/*! ../core-js/is-iterable */ "./node_modules/@babel/runtime-corejs2/core-js/is-iterable.js");
+
+function _iterableToArray(iter) {
+  if (_isIterable(Object(iter)) || Object.prototype.toString.call(iter) === "[object Arguments]") return _Array$from(iter);
+}
+
+module.exports = _iterableToArray;
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime-corejs2/helpers/iterableToArrayLimit.js":
 /*!*****************************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/helpers/iterableToArrayLimit.js ***!
@@ -1492,6 +1579,21 @@ function _nonIterableRest() {
 }
 
 module.exports = _nonIterableRest;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/helpers/nonIterableSpread.js":
+/*!**************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/helpers/nonIterableSpread.js ***!
+  \**************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _nonIterableSpread() {
+  throw new TypeError("Invalid attempt to spread non-iterable instance");
+}
+
+module.exports = _nonIterableSpread;
 
 /***/ }),
 
@@ -1597,6 +1699,27 @@ function _slicedToArray(arr, i) {
 }
 
 module.exports = _slicedToArray;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/helpers/toConsumableArray.js":
+/*!**************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/helpers/toConsumableArray.js ***!
+  \**************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var arrayWithoutHoles = __webpack_require__(/*! ./arrayWithoutHoles */ "./node_modules/@babel/runtime-corejs2/helpers/arrayWithoutHoles.js");
+
+var iterableToArray = __webpack_require__(/*! ./iterableToArray */ "./node_modules/@babel/runtime-corejs2/helpers/iterableToArray.js");
+
+var nonIterableSpread = __webpack_require__(/*! ./nonIterableSpread */ "./node_modules/@babel/runtime-corejs2/helpers/nonIterableSpread.js");
+
+function _toConsumableArray(arr) {
+  return arrayWithoutHoles(arr) || iterableToArray(arr) || nonIterableSpread();
+}
+
+module.exports = _toConsumableArray;
 
 /***/ }),
 
@@ -48447,6 +48570,20 @@ var src_5 = src.XhrIoPool;
 
 /***/ }),
 
+/***/ "./node_modules/core-js/library/fn/array/from.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/core-js/library/fn/array/from.js ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(/*! ../../modules/es6.string.iterator */ "./node_modules/core-js/library/modules/es6.string.iterator.js");
+__webpack_require__(/*! ../../modules/es6.array.from */ "./node_modules/core-js/library/modules/es6.array.from.js");
+module.exports = __webpack_require__(/*! ../../modules/_core */ "./node_modules/core-js/library/modules/_core.js").Array.from;
+
+
+/***/ }),
+
 /***/ "./node_modules/core-js/library/fn/array/is-array.js":
 /*!***********************************************************!*\
   !*** ./node_modules/core-js/library/fn/array/is-array.js ***!
@@ -48470,6 +48607,20 @@ module.exports = __webpack_require__(/*! ../../modules/_core */ "./node_modules/
 __webpack_require__(/*! ../modules/web.dom.iterable */ "./node_modules/core-js/library/modules/web.dom.iterable.js");
 __webpack_require__(/*! ../modules/es6.string.iterator */ "./node_modules/core-js/library/modules/es6.string.iterator.js");
 module.exports = __webpack_require__(/*! ../modules/core.get-iterator */ "./node_modules/core-js/library/modules/core.get-iterator.js");
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/library/fn/is-iterable.js":
+/*!********************************************************!*\
+  !*** ./node_modules/core-js/library/fn/is-iterable.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(/*! ../modules/web.dom.iterable */ "./node_modules/core-js/library/modules/web.dom.iterable.js");
+__webpack_require__(/*! ../modules/es6.string.iterator */ "./node_modules/core-js/library/modules/es6.string.iterator.js");
+module.exports = __webpack_require__(/*! ../modules/core.is-iterable */ "./node_modules/core-js/library/modules/core.is-iterable.js");
 
 
 /***/ }),
@@ -49236,6 +49387,26 @@ module.exports = function (NAME, wrapper, methods, common, IS_MAP, IS_WEAK) {
 
 var core = module.exports = { version: '2.5.7' };
 if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/library/modules/_create-property.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/core-js/library/modules/_create-property.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var $defineProperty = __webpack_require__(/*! ./_object-dp */ "./node_modules/core-js/library/modules/_object-dp.js");
+var createDesc = __webpack_require__(/*! ./_property-desc */ "./node_modules/core-js/library/modules/_property-desc.js");
+
+module.exports = function (object, index, value) {
+  if (index in object) $defineProperty.f(object, index, createDesc(0, value));
+  else object[index] = value;
+};
 
 
 /***/ }),
@@ -51030,6 +51201,76 @@ module.exports = __webpack_require__(/*! ./_core */ "./node_modules/core-js/libr
   if (typeof iterFn != 'function') throw TypeError(it + ' is not iterable!');
   return anObject(iterFn.call(it));
 };
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/library/modules/core.is-iterable.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/core-js/library/modules/core.is-iterable.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var classof = __webpack_require__(/*! ./_classof */ "./node_modules/core-js/library/modules/_classof.js");
+var ITERATOR = __webpack_require__(/*! ./_wks */ "./node_modules/core-js/library/modules/_wks.js")('iterator');
+var Iterators = __webpack_require__(/*! ./_iterators */ "./node_modules/core-js/library/modules/_iterators.js");
+module.exports = __webpack_require__(/*! ./_core */ "./node_modules/core-js/library/modules/_core.js").isIterable = function (it) {
+  var O = Object(it);
+  return O[ITERATOR] !== undefined
+    || '@@iterator' in O
+    // eslint-disable-next-line no-prototype-builtins
+    || Iterators.hasOwnProperty(classof(O));
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/library/modules/es6.array.from.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/core-js/library/modules/es6.array.from.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var ctx = __webpack_require__(/*! ./_ctx */ "./node_modules/core-js/library/modules/_ctx.js");
+var $export = __webpack_require__(/*! ./_export */ "./node_modules/core-js/library/modules/_export.js");
+var toObject = __webpack_require__(/*! ./_to-object */ "./node_modules/core-js/library/modules/_to-object.js");
+var call = __webpack_require__(/*! ./_iter-call */ "./node_modules/core-js/library/modules/_iter-call.js");
+var isArrayIter = __webpack_require__(/*! ./_is-array-iter */ "./node_modules/core-js/library/modules/_is-array-iter.js");
+var toLength = __webpack_require__(/*! ./_to-length */ "./node_modules/core-js/library/modules/_to-length.js");
+var createProperty = __webpack_require__(/*! ./_create-property */ "./node_modules/core-js/library/modules/_create-property.js");
+var getIterFn = __webpack_require__(/*! ./core.get-iterator-method */ "./node_modules/core-js/library/modules/core.get-iterator-method.js");
+
+$export($export.S + $export.F * !__webpack_require__(/*! ./_iter-detect */ "./node_modules/core-js/library/modules/_iter-detect.js")(function (iter) { Array.from(iter); }), 'Array', {
+  // 22.1.2.1 Array.from(arrayLike, mapfn = undefined, thisArg = undefined)
+  from: function from(arrayLike /* , mapfn = undefined, thisArg = undefined */) {
+    var O = toObject(arrayLike);
+    var C = typeof this == 'function' ? this : Array;
+    var aLen = arguments.length;
+    var mapfn = aLen > 1 ? arguments[1] : undefined;
+    var mapping = mapfn !== undefined;
+    var index = 0;
+    var iterFn = getIterFn(O);
+    var length, result, step, iterator;
+    if (mapping) mapfn = ctx(mapfn, aLen > 2 ? arguments[2] : undefined, 2);
+    // if object isn't iterable or it's array with default iterator - use simple case
+    if (iterFn != undefined && !(C == Array && isArrayIter(iterFn))) {
+      for (iterator = iterFn.call(O), result = new C(); !(step = iterator.next()).done; index++) {
+        createProperty(result, index, mapping ? call(iterator, mapfn, [step.value, index], true) : step.value);
+      }
+    } else {
+      length = toLength(O.length);
+      for (result = new C(length); length > index; index++) {
+        createProperty(result, index, mapping ? mapfn(O[index], index) : O[index]);
+      }
+    }
+    result.length = index;
+    return result;
+  }
+});
 
 
 /***/ }),
@@ -73075,6 +73316,164 @@ exports.default = EventEmitter;
 
 /***/ }),
 
+/***/ "./node_modules/next/dist/lib/head.js":
+/*!********************************************!*\
+  !*** ./node_modules/next/dist/lib/head.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime-corejs2/helpers/interopRequireDefault */ "./node_modules/@babel/runtime-corejs2/helpers/interopRequireDefault.js");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.defaultHead = defaultHead;
+exports.default = void 0;
+
+var _set = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/core-js/set */ "./node_modules/@babel/runtime-corejs2/core-js/set.js"));
+
+var _classCallCheck2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/classCallCheck.js"));
+
+var _createClass2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/createClass.js"));
+
+var _possibleConstructorReturn2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/possibleConstructorReturn.js"));
+
+var _getPrototypeOf2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/getPrototypeOf.js"));
+
+var _inherits2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/inherits.js"));
+
+var _defineProperty2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/defineProperty.js"));
+
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var _propTypes = _interopRequireDefault(__webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js"));
+
+var _sideEffect = _interopRequireDefault(__webpack_require__(/*! ./side-effect */ "./node_modules/next/dist/lib/side-effect.js"));
+
+var Head =
+/*#__PURE__*/
+function (_React$Component) {
+  (0, _inherits2.default)(Head, _React$Component);
+
+  function Head() {
+    (0, _classCallCheck2.default)(this, Head);
+    return (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(Head).apply(this, arguments));
+  }
+
+  (0, _createClass2.default)(Head, [{
+    key: "render",
+    value: function render() {
+      return null;
+    }
+  }]);
+  return Head;
+}(_react.default.Component);
+
+(0, _defineProperty2.default)(Head, "contextTypes", {
+  headManager: _propTypes.default.object
+});
+var NEXT_HEAD_IDENTIFIER = 'next-head';
+
+function defaultHead() {
+  var className = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : NEXT_HEAD_IDENTIFIER;
+  return [_react.default.createElement("meta", {
+    key: "charSet",
+    charSet: "utf-8",
+    className: className
+  })];
+}
+
+function reduceComponents(components) {
+  return components.map(function (component) {
+    return _react.default.Children.toArray(component.props.children);
+  }).reduce(function (a, b) {
+    return a.concat(b);
+  }, []).reduce(function (a, b) {
+    if (_react.default.Fragment && b.type === _react.default.Fragment) {
+      return a.concat(_react.default.Children.toArray(b.props.children));
+    }
+
+    return a.concat(b);
+  }, []).reverse().concat(defaultHead('')).filter(Boolean).filter(unique()).reverse().map(function (c, i) {
+    var className = (c.props && c.props.className ? c.props.className + ' ' : '') + NEXT_HEAD_IDENTIFIER;
+    var key = c.key || i;
+    return _react.default.cloneElement(c, {
+      key: key,
+      className: className
+    });
+  });
+}
+
+function mapOnServer(head) {
+  return head;
+}
+
+function onStateChange(head) {
+  if (this.context && this.context.headManager) {
+    this.context.headManager.updateHead(head);
+  }
+}
+
+var METATYPES = ['name', 'httpEquiv', 'charSet', 'itemProp', 'property'];
+var ALLOWED_DUPLICATES = ['article:tag', 'og:image', 'og:image:alt', 'og:image:width', 'og:image:height', 'og:image:type', 'og:image:secure_url', 'og:image:url'];
+/*
+ returns a function for filtering head child elements
+ which shouldn't be duplicated, like <title/>,
+ except we explicit allow it in ALLOWED_DUPLICATES array
+*/
+
+function unique() {
+  var keys = new _set.default();
+  var tags = new _set.default();
+  var metaTypes = new _set.default();
+  var metaCategories = {};
+  return function (h) {
+    if (h.key && h.key.indexOf('.$') === 0) {
+      if (keys.has(h.key)) return false;
+      keys.add(h.key);
+    }
+
+    switch (h.type) {
+      case 'title':
+      case 'base':
+        if (tags.has(h.type)) return false;
+        tags.add(h.type);
+        break;
+
+      case 'meta':
+        for (var i = 0, len = METATYPES.length; i < len; i++) {
+          var metatype = METATYPES[i];
+          if (!h.props.hasOwnProperty(metatype)) continue;
+
+          if (metatype === 'charSet') {
+            if (metaTypes.has(metatype)) return false;
+            metaTypes.add(metatype);
+          } else {
+            var category = h.props[metatype];
+            var categories = metaCategories[metatype] || new _set.default();
+            if (categories.has(category) && ALLOWED_DUPLICATES.indexOf(category) === -1) return false;
+            categories.add(category);
+            metaCategories[metatype] = categories;
+          }
+        }
+
+        break;
+    }
+
+    return true;
+  };
+}
+
+var _default = (0, _sideEffect.default)(reduceComponents, onStateChange, mapOnServer)(Head);
+
+exports.default = _default;
+
+/***/ }),
+
 /***/ "./node_modules/next/dist/lib/link.js":
 /*!********************************************!*\
   !*** ./node_modules/next/dist/lib/link.js ***!
@@ -74621,6 +75020,152 @@ function shallowEquals(a, b) {
 
 /***/ }),
 
+/***/ "./node_modules/next/dist/lib/side-effect.js":
+/*!***************************************************!*\
+  !*** ./node_modules/next/dist/lib/side-effect.js ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireWildcard = __webpack_require__(/*! @babel/runtime-corejs2/helpers/interopRequireWildcard */ "./node_modules/@babel/runtime-corejs2/helpers/interopRequireWildcard.js");
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime-corejs2/helpers/interopRequireDefault */ "./node_modules/@babel/runtime-corejs2/helpers/interopRequireDefault.js");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = withSideEffect;
+
+var _classCallCheck2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/classCallCheck.js"));
+
+var _possibleConstructorReturn2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/possibleConstructorReturn.js"));
+
+var _getPrototypeOf2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/getPrototypeOf.js"));
+
+var _createClass2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/createClass.js"));
+
+var _inherits2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/inherits.js"));
+
+var _assertThisInitialized2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/assertThisInitialized */ "./node_modules/@babel/runtime-corejs2/helpers/assertThisInitialized.js"));
+
+var _defineProperty2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/defineProperty.js"));
+
+var _toConsumableArray2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/toConsumableArray */ "./node_modules/@babel/runtime-corejs2/helpers/toConsumableArray.js"));
+
+var _set = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/core-js/set */ "./node_modules/@babel/runtime-corejs2/core-js/set.js"));
+
+var _react = _interopRequireWildcard(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var _utils = __webpack_require__(/*! ./utils */ "./node_modules/next/dist/lib/utils.js");
+
+function withSideEffect(reduceComponentsToState, handleStateChangeOnClient, mapStateOnServer) {
+  if (typeof reduceComponentsToState !== 'function') {
+    throw new Error('Expected reduceComponentsToState to be a function.');
+  }
+
+  if (typeof handleStateChangeOnClient !== 'function') {
+    throw new Error('Expected handleStateChangeOnClient to be a function.');
+  }
+
+  if (typeof mapStateOnServer !== 'undefined' && typeof mapStateOnServer !== 'function') {
+    throw new Error('Expected mapStateOnServer to either be undefined or a function.');
+  }
+
+  return function wrap(WrappedComponent) {
+    if (typeof WrappedComponent !== 'function') {
+      throw new Error('Expected WrappedComponent to be a React component.');
+    }
+
+    var mountedInstances = new _set.default();
+    var state;
+
+    function emitChange(component) {
+      state = reduceComponentsToState((0, _toConsumableArray2.default)(mountedInstances));
+
+      if (SideEffect.canUseDOM) {
+        handleStateChangeOnClient.call(component, state);
+      } else if (mapStateOnServer) {
+        state = mapStateOnServer(state);
+      }
+    }
+
+    var SideEffect =
+    /*#__PURE__*/
+    function (_Component) {
+      (0, _inherits2.default)(SideEffect, _Component);
+      (0, _createClass2.default)(SideEffect, null, [{
+        key: "peek",
+        // Expose canUseDOM so tests can monkeypatch it
+        // Try to use displayName of wrapped component
+        value: function peek() {
+          return state;
+        }
+      }, {
+        key: "rewind",
+        value: function rewind() {
+          if (SideEffect.canUseDOM) {
+            throw new Error('You may only call rewind() on the server. Call peek() to read the current state.');
+          }
+
+          var recordedState = state;
+          state = undefined;
+          mountedInstances.clear();
+          return recordedState;
+        }
+      }]);
+
+      function SideEffect(props) {
+        var _this;
+
+        (0, _classCallCheck2.default)(this, SideEffect);
+        _this = (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(SideEffect).call(this, props));
+
+        if (!SideEffect.canUseDOM) {
+          mountedInstances.add((0, _assertThisInitialized2.default)((0, _assertThisInitialized2.default)(_this)));
+          emitChange((0, _assertThisInitialized2.default)((0, _assertThisInitialized2.default)(_this)));
+        }
+
+        return _this;
+      }
+
+      (0, _createClass2.default)(SideEffect, [{
+        key: "componentDidMount",
+        value: function componentDidMount() {
+          mountedInstances.add(this);
+          emitChange(this);
+        }
+      }, {
+        key: "componentDidUpdate",
+        value: function componentDidUpdate() {
+          emitChange(this);
+        }
+      }, {
+        key: "componentWillUnmount",
+        value: function componentWillUnmount() {
+          mountedInstances.delete(this);
+          emitChange(this);
+        }
+      }, {
+        key: "render",
+        value: function render() {
+          return _react.default.createElement(WrappedComponent, null, this.props.children);
+        }
+      }]);
+      return SideEffect;
+    }(_react.Component);
+
+    (0, _defineProperty2.default)(SideEffect, "canUseDOM", typeof window !== 'undefined');
+    (0, _defineProperty2.default)(SideEffect, "contextTypes", WrappedComponent.contextTypes);
+    (0, _defineProperty2.default)(SideEffect, "displayName", "SideEffect(".concat((0, _utils.getDisplayName)(WrappedComponent), ")"));
+    return SideEffect;
+  };
+}
+
+/***/ }),
+
 /***/ "./node_modules/next/dist/lib/utils.js":
 /*!*********************************************!*\
   !*** ./node_modules/next/dist/lib/utils.js ***!
@@ -74759,6 +75304,18 @@ function getURL() {
   var origin = getLocationOrigin();
   return href.substring(origin.length);
 }
+
+/***/ }),
+
+/***/ "./node_modules/next/head.js":
+/*!***********************************!*\
+  !*** ./node_modules/next/head.js ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! ./dist/lib/head */ "./node_modules/next/dist/lib/head.js")
+
 
 /***/ }),
 
@@ -77038,6 +77595,17 @@ var objectKeys = Object.keys || function (obj) {
 exports.decode = exports.parse = __webpack_require__(/*! ./decode */ "./node_modules/querystring-es3/decode.js");
 exports.encode = exports.stringify = __webpack_require__(/*! ./encode */ "./node_modules/querystring-es3/encode.js");
 
+
+/***/ }),
+
+/***/ "./node_modules/react-dom/index.js":
+/*!***********************************************************************************************!*\
+  !*** delegated ./node_modules/react-dom/index.js from dll-reference dll_52339ab353c8e0db40da ***!
+  \***********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = (__webpack_require__(/*! dll-reference dll_52339ab353c8e0db40da */ "dll-reference dll_52339ab353c8e0db40da"))("./node_modules/react-dom/index.js");
 
 /***/ }),
 
@@ -80748,6 +81316,1962 @@ module.exports = function(module) {
 
 /***/ }),
 
+/***/ "./node_modules/yandex-map-react/lib/BalloonLayout.js":
+/*!************************************************************!*\
+  !*** ./node_modules/yandex-map-react/lib/BalloonLayout.js ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var BalloonLayout = function (_Component) {
+    _inherits(BalloonLayout, _Component);
+
+    function BalloonLayout() {
+        _classCallCheck(this, BalloonLayout);
+
+        return _possibleConstructorReturn(this, (BalloonLayout.__proto__ || Object.getPrototypeOf(BalloonLayout)).apply(this, arguments));
+    }
+
+    _createClass(BalloonLayout, [{
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(
+                'div',
+                null,
+                this.props.children
+            );
+        }
+    }]);
+
+    return BalloonLayout;
+}(_react.Component);
+
+exports.default = BalloonLayout;
+
+/***/ }),
+
+/***/ "./node_modules/yandex-map-react/lib/ConstructorJSONImport.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/yandex-map-react/lib/ConstructorJSONImport.js ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _ImportObjectController = __webpack_require__(/*! ./controllers/ImportObjectController */ "./node_modules/yandex-map-react/lib/controllers/ImportObjectController.js");
+
+var _ImportObjectController2 = _interopRequireDefault(_ImportObjectController);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ConstructorJSONImport = function (_Component) {
+    _inherits(ConstructorJSONImport, _Component);
+
+    function ConstructorJSONImport() {
+        _classCallCheck(this, ConstructorJSONImport);
+
+        return _possibleConstructorReturn(this, (ConstructorJSONImport.__proto__ || Object.getPrototypeOf(ConstructorJSONImport)).apply(this, arguments));
+    }
+
+    _createClass(ConstructorJSONImport, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            var map = this.context.mapController.map;
+
+            this._controller = new _ImportObjectController2.default(map, this.props.userMapData);
+        }
+    }, {
+        key: 'componentWillUnmount',
+        value: function componentWillUnmount() {
+            this._controller.destroy();
+        }
+    }, {
+        key: 'shouldComponentUpdate',
+        value: function shouldComponentUpdate() {
+            return false;
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            return null;
+        }
+    }]);
+
+    return ConstructorJSONImport;
+}(_react.Component);
+
+ConstructorJSONImport.propTypes = {
+    userMapData: _propTypes2.default.object.isRequired
+};
+ConstructorJSONImport.contextTypes = {
+    mapController: _propTypes2.default.object
+};
+exports.default = ConstructorJSONImport;
+
+/***/ }),
+
+/***/ "./node_modules/yandex-map-react/lib/MapContainer.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/yandex-map-react/lib/MapContainer.js ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+var _MapElement = __webpack_require__(/*! ./MapElement */ "./node_modules/yandex-map-react/lib/MapElement.js");
+
+var _MapElement2 = _interopRequireDefault(_MapElement);
+
+var _MapController = __webpack_require__(/*! ./controllers/MapController */ "./node_modules/yandex-map-react/lib/controllers/MapController.js");
+
+var _MapController2 = _interopRequireDefault(_MapController);
+
+var _map = __webpack_require__(/*! ./apiEventsLists/map */ "./node_modules/yandex-map-react/lib/apiEventsLists/map.js");
+
+var _map2 = _interopRequireDefault(_map);
+
+var _decorators = __webpack_require__(/*! ./utils/decorators */ "./node_modules/yandex-map-react/lib/utils/decorators.js");
+
+var _configs = __webpack_require__(/*! ./configs */ "./node_modules/yandex-map-react/lib/configs/index.js");
+
+var _configs2 = _interopRequireDefault(_configs);
+
+var _api = __webpack_require__(/*! ./api */ "./node_modules/yandex-map-react/lib/api.js");
+
+var _api2 = _interopRequireDefault(_api);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var YandexMap = function (_Component) {
+    _inherits(YandexMap, _Component);
+
+    function YandexMap(props) {
+        _classCallCheck(this, YandexMap);
+
+        var _this = _possibleConstructorReturn(this, (YandexMap.__proto__ || Object.getPrototypeOf(YandexMap)).call(this, props));
+
+        _this.state = {
+            isAPILoaded: false
+        };
+        return _this;
+    }
+
+    _createClass(YandexMap, [{
+        key: 'getChildContext',
+        value: function getChildContext() {
+            return {
+                mapController: this._controller,
+                coordorder: this.props.loadOptions.coordorder || 'latlong'
+            };
+        }
+    }, {
+        key: 'getController',
+        value: function getController() {
+            return this._controller ? this._controller : null;
+        }
+    }, {
+        key: 'componentWillReceiveProps',
+        value: function componentWillReceiveProps(nextProps) {
+            var _this2 = this;
+
+            this._controller && Object.keys(nextProps).forEach(function (key) {
+                switch (key) {
+                    case 'controls':
+                        _this2._controller.setState(key, nextProps[key]);
+                        break;
+                    case 'center':
+                        if (_this2.props.center[0] !== nextProps.center[0] || _this2.props.center[1] !== nextProps.center[1]) {
+                            _this2._controller.setCenter(nextProps.center);
+                        }
+
+                        break;
+                    case 'zoom':
+                        if (_this2.props.zoom !== nextProps.zoom) {
+                            _this2._controller.setZoom(nextProps.zoom);
+                        }
+
+                        break;
+                    case 'bounds':
+                        if (_this2.props.bounds !== nextProps.bounds) {
+                            _this2._controller.setBounds(nextProps.bounds);
+                        }
+
+                        break;
+                    default:
+                        break;
+                }
+            });
+        }
+    }, {
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            if (_api2.default.isAvailible()) {
+                this._onAPILoad(_api2.default.getAPI());
+            } else {
+                _api2.default.load(this.props.loadOptions).then(this._onAPILoad.bind(this)).catch(function (error) {
+                    return console.log('Error occured: %s', error);
+                });
+            }
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(
+                'div',
+                { style: this._getStyle() },
+                _react2.default.createElement(_MapElement2.default, { ref: 'mapContainer' }),
+                Boolean(this.state.isAPILoaded) ? this.props.children : null
+            );
+        }
+    }, {
+        key: '_getStyle',
+        value: function _getStyle() {
+            return _extends({}, this.props.style, {
+                width: typeof this.props.width == 'string' ? this.props.width : this.props.width + 'px',
+                height: typeof this.props.height == 'string' ? this.props.height : this.props.height + 'px'
+            });
+        }
+    }, {
+        key: '_onAPILoad',
+        value: function _onAPILoad(namespace) {
+            this.props.onAPIAvailable && this.props.onAPIAvailable(namespace);
+
+            this._controller = new _MapController2.default();
+            this._controller.createMap(_reactDom2.default.findDOMNode(this.refs.mapContainer), _extends({}, this.props.state, {
+                center: this.props.center,
+                zoom: this.props.zoom,
+                bounds: this.props.bounds
+            }), _extends({}, this.props.options));
+
+            this._setupEvents();
+            this.setState({ isAPILoaded: true });
+
+            if (this.props.onMapAvailable) {
+                this.props.onMapAvailable(this._controller.map);
+            }
+        }
+    }]);
+
+    return YandexMap;
+}(_react.Component);
+
+YandexMap.propTypes = {
+    apiKey: _propTypes2.default.string,
+    onAPIAvailable: _propTypes2.default.func,
+    width: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number]),
+    height: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number]),
+    zoom: _propTypes2.default.number,
+    state: _propTypes2.default.object,
+    options: _propTypes2.default.object,
+    loadOptions: _propTypes2.default.object,
+    bounds: _propTypes2.default.array
+};
+YandexMap.defaultProps = {
+    zoom: 10,
+    center: [55, 45],
+    width: 600,
+    height: 600,
+    bounds: undefined,
+    state: {
+        controls: []
+    },
+    options: {},
+    loadOptions: {},
+    style: {
+        position: 'relative'
+    }
+};
+YandexMap.childContextTypes = {
+    mapController: _propTypes2.default.object,
+    coordorder: _propTypes2.default.oneOf(['latlong', 'longlat'])
+};
+exports.default = (0, _decorators.eventsDecorator)(YandexMap, { supportEvents: _map2.default });
+
+/***/ }),
+
+/***/ "./node_modules/yandex-map-react/lib/MapElement.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/yandex-map-react/lib/MapElement.js ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var style = {
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+    margin: 0,
+    padding: 0
+};
+
+var MapElement = function (_Component) {
+    _inherits(MapElement, _Component);
+
+    function MapElement(props) {
+        _classCallCheck(this, MapElement);
+
+        return _possibleConstructorReturn(this, (MapElement.__proto__ || Object.getPrototypeOf(MapElement)).call(this, props));
+    }
+
+    _createClass(MapElement, [{
+        key: 'shouldComponentUpdate',
+        value: function shouldComponentUpdate() {
+            return false;
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement('div', { style: style });
+        }
+    }]);
+
+    return MapElement;
+}(_react.Component);
+
+exports.default = MapElement;
+
+/***/ }),
+
+/***/ "./node_modules/yandex-map-react/lib/MapMarker.js":
+/*!********************************************************!*\
+  !*** ./node_modules/yandex-map-react/lib/MapMarker.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+var _BalloonLayout = __webpack_require__(/*! ./BalloonLayout */ "./node_modules/yandex-map-react/lib/BalloonLayout.js");
+
+var _BalloonLayout2 = _interopRequireDefault(_BalloonLayout);
+
+var _MarkerLayout = __webpack_require__(/*! ./MarkerLayout */ "./node_modules/yandex-map-react/lib/MarkerLayout.js");
+
+var _MarkerLayout2 = _interopRequireDefault(_MarkerLayout);
+
+var _MarkerController = __webpack_require__(/*! ./controllers/MarkerController */ "./node_modules/yandex-map-react/lib/controllers/MarkerController.js");
+
+var _MarkerController2 = _interopRequireDefault(_MarkerController);
+
+var _geoObject = __webpack_require__(/*! ./apiEventsLists/geoObject */ "./node_modules/yandex-map-react/lib/apiEventsLists/geoObject.js");
+
+var _geoObject2 = _interopRequireDefault(_geoObject);
+
+var _decorators = __webpack_require__(/*! ./utils/decorators */ "./node_modules/yandex-map-react/lib/utils/decorators.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var MapMarker = function (_Component) {
+    _inherits(MapMarker, _Component);
+
+    function MapMarker(props) {
+        _classCallCheck(this, MapMarker);
+
+        var _this = _possibleConstructorReturn(this, (MapMarker.__proto__ || Object.getPrototypeOf(MapMarker)).call(this, props));
+
+        _this.options = {};
+        return _this;
+    }
+
+    _createClass(MapMarker, [{
+        key: 'componentDidUpdate',
+        value: function componentDidUpdate(prevProps) {
+            var _this2 = this;
+
+            var _props = this.props,
+                lat = _props.lat,
+                lon = _props.lon,
+                children = _props.children,
+                properties = _props.properties,
+                options = _props.options,
+                balloonState = _props.balloonState;
+
+
+            if (lat !== prevProps.lat || lon !== prevProps.lon) {
+                this._controller.setPosition(this.context.coordorder === 'longlat' ? [lon, lat] : [lat, lon]);
+            }
+
+            Object.keys(properties || {}).forEach(function (propName) {
+                if (!prevProps.properties || properties[propName] !== prevProps.properties[propName]) {
+                    _this2._controller.setProperty(propName, properties[propName]);
+                }
+            });
+
+            Object.keys(options || {}).forEach(function (optName) {
+                if (!prevProps.options || options[optName] !== prevProps.options[optName]) {
+                    _this2._controller.setOption(optName, options[optName]);
+                }
+            });
+
+            this._controller.setBalloonState(balloonState);
+
+            if (children != prevProps.children) {
+                this._clearLayouts();
+                this._setupLayouts();
+            }
+        }
+    }, {
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            var _props2 = this.props,
+                lat = _props2.lat,
+                lon = _props2.lon,
+                properties = _props2.properties,
+                options = _props2.options,
+                balloonState = _props2.balloonState;
+
+            var coords = this.context.coordorder === 'longlat' ? [lon, lat] : [lat, lon];
+
+            this._controller = new _MarkerController2.default(coords, properties, options, balloonState);
+
+            this._setupLayouts();
+            this._setupEvents();
+
+            this.context.mapController.appendMarker(this._controller);
+        }
+    }, {
+        key: 'componentWillUnmount',
+        value: function componentWillUnmount() {
+            this._clearLayouts();
+            this._controller.destroy();
+        }
+    }, {
+        key: 'getController',
+        value: function getController() {
+            return this._controller ? this._controller : null;
+        }
+    }, {
+        key: '_setupLayouts',
+        value: function _setupLayouts() {
+            var _this3 = this;
+
+            _react2.default.Children.toArray(this.props.children).forEach(function (component) {
+                if (component.type === _BalloonLayout2.default) {
+                    _this3._setupBalloonLayout(component);
+                }
+                if (component.type === _MarkerLayout2.default) {
+                    _this3._setupMarkerLayout(component);
+                }
+            });
+        }
+    }, {
+        key: '_setupMarkerLayout',
+        value: function _setupMarkerLayout(component) {
+            this._markerElement = document.createElement('div');
+            this._markerElement.className = 'icon-content';
+            this._markerElement.style.display = 'inline-block';
+
+            _reactDom2.default.render(component, this._markerElement);
+            this._controller.setLayout('iconLayout', this._markerElement);
+        }
+    }, {
+        key: '_setupBalloonLayout',
+        value: function _setupBalloonLayout(component) {
+            this._balloonElement = document.createElement('div');
+
+            _reactDom2.default.render(component, this._balloonElement);
+            this._controller.setLayout('balloonLayout', this._balloonElement);
+        }
+    }, {
+        key: '_clearLayouts',
+        value: function _clearLayouts() {
+            if (this._markerElement) {
+                _reactDom2.default.unmountComponentAtNode(this._markerElement);
+                this._markerElement = null;
+            }
+
+            if (this._balloonElement) {
+                _reactDom2.default.unmountComponentAtNode(this._balloonElement);
+                this._balloonElement = null;
+            }
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            return null;
+        }
+    }]);
+
+    return MapMarker;
+}(_react.Component);
+
+MapMarker.propTypes = {
+    lat: _propTypes2.default.number.isRequired,
+    lon: _propTypes2.default.number.isRequired,
+    properties: _propTypes2.default.object,
+    options: _propTypes2.default.object,
+    balloonState: _propTypes2.default.oneOf(['opened', 'closed'])
+};
+MapMarker.defaultProps = {
+    balloonState: 'closed'
+};
+MapMarker.contextTypes = {
+    mapController: _propTypes2.default.object,
+    coordorder: _propTypes2.default.oneOf(['latlong', 'longlat'])
+};
+exports.default = (0, _decorators.eventsDecorator)(MapMarker, { supportEvents: _geoObject2.default });
+
+/***/ }),
+
+/***/ "./node_modules/yandex-map-react/lib/MarkerLayout.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/yandex-map-react/lib/MarkerLayout.js ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _constants = __webpack_require__(/*! ./constants */ "./node_modules/yandex-map-react/lib/constants/index.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+/**
+ * @class MarkerLayout
+ */
+var MarkerLayout = function (_Component) {
+    _inherits(MarkerLayout, _Component);
+
+    function MarkerLayout() {
+        _classCallCheck(this, MarkerLayout);
+
+        return _possibleConstructorReturn(this, (MarkerLayout.__proto__ || Object.getPrototypeOf(MarkerLayout)).apply(this, arguments));
+    }
+
+    _createClass(MarkerLayout, [{
+        key: 'componentWillUnmount',
+        value: function componentWillUnmount() {
+            if (this._marker) {
+                this._marker.destroy();
+            }
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(
+                'div',
+                null,
+                this.props.children
+            );
+        }
+    }]);
+
+    return MarkerLayout;
+}(_react.Component);
+
+MarkerLayout.propTypes = {
+    marker: _propTypes2.default.object
+};
+exports.default = MarkerLayout;
+
+/***/ }),
+
+/***/ "./node_modules/yandex-map-react/lib/PanoramaContainer.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/yandex-map-react/lib/PanoramaContainer.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+var _PanoramaElement = __webpack_require__(/*! ./PanoramaElement */ "./node_modules/yandex-map-react/lib/PanoramaElement.js");
+
+var _PanoramaElement2 = _interopRequireDefault(_PanoramaElement);
+
+var _PanoramaController = __webpack_require__(/*! ./controllers/PanoramaController */ "./node_modules/yandex-map-react/lib/controllers/PanoramaController.js");
+
+var _PanoramaController2 = _interopRequireDefault(_PanoramaController);
+
+var _map = __webpack_require__(/*! ./apiEventsLists/map */ "./node_modules/yandex-map-react/lib/apiEventsLists/map.js");
+
+var _map2 = _interopRequireDefault(_map);
+
+var _decorators = __webpack_require__(/*! ./utils/decorators */ "./node_modules/yandex-map-react/lib/utils/decorators.js");
+
+var _api = __webpack_require__(/*! ./api */ "./node_modules/yandex-map-react/lib/api.js");
+
+var _api2 = _interopRequireDefault(_api);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var YandexPanorama = function (_Component) {
+    _inherits(YandexPanorama, _Component);
+
+    function YandexPanorama(props) {
+        _classCallCheck(this, YandexPanorama);
+
+        var _this = _possibleConstructorReturn(this, (YandexPanorama.__proto__ || Object.getPrototypeOf(YandexPanorama)).call(this, props));
+
+        _this.isPanoramas = function (isPanoramas) {
+            _this.setState({
+                isPanoramas: isPanoramas
+            });
+        };
+
+        _this.state = {
+            isAPILoaded: false,
+            showService: false,
+            isPanoramas: false
+        };
+        return _this;
+    }
+
+    _createClass(YandexPanorama, [{
+        key: 'getChildContext',
+        value: function getChildContext() {
+            return {
+                mapController: this._controller,
+                coordorder: this.props.loadOptions.coordorder || 'latlong'
+            };
+        }
+    }, {
+        key: 'getController',
+        value: function getController() {
+            return this._controller ? this._controller : null;
+        }
+    }, {
+        key: 'componentWillReceiveProps',
+        value: function componentWillReceiveProps(nextProps) {
+            var _this2 = this;
+
+            this._controller && Object.keys(nextProps).forEach(function (key) {
+                switch (key) {
+                    case 'showService':
+                        if (_this2.state.showService !== nextProps.showService) {
+                            _this2.setState({
+                                showService: nextProps.showService
+                            }, function () {
+                                return _this2.state.showService && _this2.init();
+                            });
+                        }
+                        break;
+                    default:
+                        break;
+                }
+            });
+        }
+    }, {
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            this.init();
+        }
+    }, {
+        key: 'init',
+        value: function init() {
+            if (_api2.default.isAvailible()) {
+                this._onAPILoad(_api2.default.getAPI());
+            } else {
+                _api2.default.load(this.props.loadOptions).then(this._onAPILoad.bind(this)).catch(function (error) {
+                    return console.log('Error occured: %s', error);
+                });
+            }
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+
+            var style = {};
+            if (this.state.showService) {
+                style = this._getStyle();
+            }
+
+            return _react2.default.createElement(
+                'div',
+                null,
+                _react2.default.createElement(
+                    'div',
+                    { style: style },
+                    _react2.default.createElement(_PanoramaElement2.default, { ref: 'panoramaPlayer', show: this.state.showService })
+                ),
+                !this.state.showService && this.state.isPanoramas && this.props.children
+            );
+        }
+    }, {
+        key: '_getStyle',
+        value: function _getStyle() {
+            return _extends({}, this.props.style, {
+                width: typeof this.props.width == 'string' ? this.props.width : this.props.width + 'px',
+                height: typeof this.props.height == 'string' ? this.props.height : this.props.height + 'px'
+            });
+        }
+    }, {
+        key: '_onAPILoad',
+        value: function _onAPILoad(namespace) {
+            var _this3 = this;
+
+            this.props.onAPIAvailable && this.props.onAPIAvailable(namespace);
+
+            this._controller = new _PanoramaController2.default(this.isPanoramas);
+            this._controller.createPanorama(_reactDom2.default.findDOMNode(this.refs.panoramaPlayer), _extends({}, this.props.state, {
+                center: this.props.center,
+                zoom: this.props.zoom,
+                bounds: this.props.bounds
+            }), _extends({}, this.props.options));
+
+            this.setState({ isAPILoaded: true }, function () {
+                return _this3._controller.locate(_this3.state.showService);
+            });
+        }
+    }]);
+
+    return YandexPanorama;
+}(_react.Component);
+
+YandexPanorama.propTypes = {
+    apiKey: _propTypes2.default.string,
+    onAPIAvailable: _propTypes2.default.func,
+    width: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number]),
+    height: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number]),
+    zoom: _propTypes2.default.number,
+    state: _propTypes2.default.object,
+    options: _propTypes2.default.object,
+    loadOptions: _propTypes2.default.object,
+    bounds: _propTypes2.default.array
+};
+YandexPanorama.defaultProps = {
+    zoom: 10,
+    center: [55, 45],
+    width: 600,
+    height: 600,
+    bounds: undefined,
+    state: {
+        controls: []
+    },
+    options: {},
+    loadOptions: {},
+    style: {
+        position: 'relative'
+    }
+};
+YandexPanorama.childContextTypes = {
+    mapController: _propTypes2.default.object,
+    coordorder: _propTypes2.default.oneOf(['latlong', 'longlat'])
+};
+exports.default = (0, _decorators.eventsDecorator)(YandexPanorama, { supportEvents: _map2.default });
+
+/***/ }),
+
+/***/ "./node_modules/yandex-map-react/lib/PanoramaElement.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/yandex-map-react/lib/PanoramaElement.js ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var style = {
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+    margin: 0,
+    padding: 0
+};
+
+var PanoramaElement = function (_Component) {
+    _inherits(PanoramaElement, _Component);
+
+    function PanoramaElement() {
+        _classCallCheck(this, PanoramaElement);
+
+        return _possibleConstructorReturn(this, (PanoramaElement.__proto__ || Object.getPrototypeOf(PanoramaElement)).apply(this, arguments));
+    }
+
+    _createClass(PanoramaElement, [{
+        key: 'render',
+        value: function render() {
+            if (this.props.show) {
+                return _react2.default.createElement(
+                    'div',
+                    { style: style },
+                    ' '
+                );
+            } else {
+                return null;
+            }
+        }
+    }]);
+
+    return PanoramaElement;
+}(_react.Component);
+
+exports.default = PanoramaElement;
+
+/***/ }),
+
+/***/ "./node_modules/yandex-map-react/lib/api.js":
+/*!**************************************************!*\
+  !*** ./node_modules/yandex-map-react/lib/api.js ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _loadApi = __webpack_require__(/*! ./utils/loaders/loadApi */ "./node_modules/yandex-map-react/lib/utils/loaders/loadApi.js");
+
+var _loadApi2 = _interopRequireDefault(_loadApi);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Api = function () {
+    function Api() {
+        _classCallCheck(this, Api);
+
+        this.api = typeof window != 'undefined' && window.ymaps ? window.ymaps : null;
+    }
+
+    _createClass(Api, [{
+        key: 'setAPI',
+        value: function setAPI(instance) {
+            this.api = instance;
+
+            return this.api;
+        }
+    }, {
+        key: 'getAPI',
+        value: function getAPI() {
+            return this.api;
+        }
+    }, {
+        key: 'isAvailible',
+        value: function isAvailible() {
+            return Boolean(this.api);
+        }
+
+        /**
+         * Loading API
+         * @return {Promise}
+         */
+
+    }, {
+        key: 'load',
+        value: function load() {
+            var _this = this;
+
+            var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+            return (0, _loadApi2.default)(options).then(function (instance) {
+                _this.api = instance;
+                return instance;
+            });
+        }
+    }]);
+
+    return Api;
+}();
+
+exports.default = new Api();
+
+/***/ }),
+
+/***/ "./node_modules/yandex-map-react/lib/apiEventsLists/geoObject.js":
+/*!***********************************************************************!*\
+  !*** ./node_modules/yandex-map-react/lib/apiEventsLists/geoObject.js ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = ['balloonclose', 'balloonopen', 'beforedrag', 'beforedragstart', 'click', 'contextmenu', 'dblclick', 'geometrychange', 'hintclose', 'hintopen', 'mapchange', 'mousedown', 'mouseenter', 'mouseleave', 'mousemove', 'mouseup', 'multitouchend', 'multitouchmove', 'multitouchstart', 'optionschange', 'overlaychange', 'parentchange', 'propertieschange', 'wheel', 'drag', 'dragend', 'dragstart', 'editorstatechange'];
+
+/***/ }),
+
+/***/ "./node_modules/yandex-map-react/lib/apiEventsLists/map.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/yandex-map-react/lib/apiEventsLists/map.js ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = ['actionbegin', 'actionbreak', 'actionend', 'actiontick', 'actiontickcomplete', 'balloonclose', 'balloonopen', 'boundschange', 'click', 'contextmenu', 'dblclick', 'destroy', 'hintclose', 'hintopen', 'marginchange', 'mousedown', 'mouseenter', 'mouseleave', 'mousemove', 'mouseup', 'multitouchend', 'multitouchmove', 'multitouchstart', 'optionschange', 'sizechange', 'typechange', 'wheel'];
+
+/***/ }),
+
+/***/ "./node_modules/yandex-map-react/lib/configs/index.js":
+/*!************************************************************!*\
+  !*** ./node_modules/yandex-map-react/lib/configs/index.js ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+/**
+ * Yandex API config
+ */
+var apiConfig = exports.apiConfig = {
+  host: 'api-maps.yandex.ru',
+  version: '2.1'
+};
+
+/***/ }),
+
+/***/ "./node_modules/yandex-map-react/lib/constants/index.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/yandex-map-react/lib/constants/index.js ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var types = exports.types = {
+    MARKER_LAYOUT: 1
+};
+
+/***/ }),
+
+/***/ "./node_modules/yandex-map-react/lib/controllers/ImportObjectController.js":
+/*!*********************************************************************************!*\
+  !*** ./node_modules/yandex-map-react/lib/controllers/ImportObjectController.js ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _api = __webpack_require__(/*! ../api */ "./node_modules/yandex-map-react/lib/api.js");
+
+var _api2 = _interopRequireDefault(_api);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var ImportObjectController = function () {
+    function ImportObjectController(map, data) {
+        _classCallCheck(this, ImportObjectController);
+
+        this._map = map;
+        this._data = data;
+
+        this._setupPresets();
+        this._setupGeoObjects();
+    }
+
+    _createClass(ImportObjectController, [{
+        key: 'destroy',
+        value: function destroy() {
+            this._clearPresets();
+            this._geoObject.removeFromMap(this._map);
+            this._geoObject = null;
+            this._map = null;
+        }
+    }, {
+        key: '_setupGeoObjects',
+        value: function _setupGeoObjects() {
+            var geoObjects = this._data.geoObjects;
+
+            var ymaps = _api2.default.getAPI();
+
+            if (!geoObjects) {
+                return;
+            }
+
+            this._geoObject = ymaps.geoQuery(this._prepare(geoObjects)).addToMap(this._map);
+        }
+    }, {
+        key: '_prepare',
+        value: function _prepare(collection) {
+            var updatedCollection = _extends({}, collection);
+
+            updatedCollection.features.forEach(function (feature) {
+                var props = feature.properties;
+                if (!props) {
+                    return feature;
+                }
+                if (props.name) {
+                    props.balloonContentHeader = props.name;
+                }
+                if (props.description) {
+                    props.balloonContentBody = props.description;
+                }
+            });
+
+            return updatedCollection;
+        }
+    }, {
+        key: '_setupPresets',
+        value: function _setupPresets() {
+            var presetStorage = this._data.presetStorage;
+
+            var ymaps = _api2.default.getAPI();
+
+            if (!presetStorage) {
+                return;
+            }
+
+            this._presetKeys = Object.keys(presetStorage);
+            this._presetKeys.forEach(function (key) {
+                ymaps.option.presetStorage.add(key, presetStorage[key]);
+            });
+        }
+    }, {
+        key: '_clearPresets',
+        value: function _clearPresets() {
+            var ymaps = _api2.default.getAPI();
+            this._presetKeys.forEach(function (key) {
+                ymaps.option.presetStorage.remove(key);
+            });
+        }
+    }]);
+
+    return ImportObjectController;
+}();
+
+exports.default = ImportObjectController;
+
+/***/ }),
+
+/***/ "./node_modules/yandex-map-react/lib/controllers/MapController.js":
+/*!************************************************************************!*\
+  !*** ./node_modules/yandex-map-react/lib/controllers/MapController.js ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _api = __webpack_require__(/*! ../api */ "./node_modules/yandex-map-react/lib/api.js");
+
+var _api2 = _interopRequireDefault(_api);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var MapController = function () {
+    function MapController() {
+        _classCallCheck(this, MapController);
+    }
+
+    _createClass(MapController, [{
+        key: 'createMap',
+        value: function createMap(container, state, options) {
+            this._map = new (_api2.default.getAPI().Map)(container, state, options);
+            this.events = this._map.events.group();
+
+            this._setupCollection();
+
+            return this;
+        }
+    }, {
+        key: 'appendMarker',
+        value: function appendMarker(marker) {
+            this._geoCollection.add(marker.getAPIInstance());
+            marker.setBalloonState(marker.balloonState);
+        }
+    }, {
+        key: 'setOptions',
+        value: function setOptions(name, value) {
+            this._map.options.set(name, value);
+        }
+    }, {
+        key: 'setCenter',
+        value: function setCenter(coords) {
+            this._map.setCenter(coords);
+        }
+    }, {
+        key: 'setZoom',
+        value: function setZoom(zoom) {
+            this._map.setZoom(zoom);
+        }
+    }, {
+        key: 'setBounds',
+        value: function setBounds(bounds) {
+            this._map.setBounds(bounds);
+        }
+    }, {
+        key: 'setState',
+        value: function setState(name, value) {
+            this._map.state.set(name, value);
+        }
+    }, {
+        key: 'destroy',
+        value: function destroy() {
+            this.events.removeAll();
+            this._map.destroy();
+        }
+    }, {
+        key: '_setupCollection',
+        value: function _setupCollection() {
+            this._geoCollection = new (_api2.default.getAPI().GeoObjectCollection)();
+            this._map.geoObjects.add(this._geoCollection);
+        }
+    }, {
+        key: 'map',
+        get: function get() {
+            return this._map;
+        }
+    }]);
+
+    return MapController;
+}();
+
+exports.default = MapController;
+
+/***/ }),
+
+/***/ "./node_modules/yandex-map-react/lib/controllers/MarkerController.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/yandex-map-react/lib/controllers/MarkerController.js ***!
+  \***************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _api = __webpack_require__(/*! ../api */ "./node_modules/yandex-map-react/lib/api.js");
+
+var _api2 = _interopRequireDefault(_api);
+
+var _layouts = __webpack_require__(/*! ./layouts */ "./node_modules/yandex-map-react/lib/controllers/layouts.js");
+
+var _layouts2 = _interopRequireDefault(_layouts);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+/**
+ * @class MarkerController
+ */
+var MarkerController = function () {
+    /**
+     * @constructor
+     * @param  {Number[]} coordinates Marker coordinate
+     * @param  {Object} properties
+     * @param  {Object} options
+     * @param  {HTMLElement} options.markerDOM Marker layout
+     */
+    function MarkerController(coordinates) {
+        var properties = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+        var options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+        var balloonState = arguments[3];
+
+        _classCallCheck(this, MarkerController);
+
+        this.options = options;
+        this.properties = properties;
+        this.balloonState = balloonState;
+        this._coordinates = coordinates;
+        this._marker = new (_api2.default.getAPI().Placemark)(coordinates, null, null);
+        this._setupMarkerProperties();
+        this._setupMarkerOptions();
+        this.events = this._marker.events.group();
+    }
+
+    /**
+     * @return {Object} Return marker instance (specific for MAPAPI)
+     */
+
+
+    _createClass(MarkerController, [{
+        key: 'getAPIInstance',
+        value: function getAPIInstance() {
+            return this._marker;
+        }
+
+        /**
+         * @return {Number[]} Marker coordinates
+         */
+
+    }, {
+        key: 'getCoordinates',
+        value: function getCoordinates() {
+            return this._coordinates;
+        }
+    }, {
+        key: 'setPosition',
+        value: function setPosition(coordinates) {
+            this._marker.geometry.setCoordinates(coordinates);
+        }
+    }, {
+        key: 'setProperty',
+        value: function setProperty(propName, value) {
+            this._marker.properties.set(propName, value);
+        }
+    }, {
+        key: 'setOption',
+        value: function setOption(optName, value) {
+            this._marker.options.set(optName, value);
+        }
+    }, {
+        key: 'setBalloonState',
+        value: function setBalloonState(state) {
+            if (state === 'opened') {
+                if (!this._marker.balloon.isOpen()) {
+                    this._marker.balloon.open();
+                }
+            } else {
+                if (this._marker.balloon.isOpen()) {
+                    this._marker.balloon.close();
+                }
+            }
+        }
+
+        /**
+         *
+         * @param {String} name
+         * @param {HTMLElement} element
+         */
+
+    }, {
+        key: 'setLayout',
+        value: function setLayout(name, element) {
+            var layout = void 0;
+
+            if (name === 'iconLayout') {
+                layout = _layouts2.default.createIconLayoutClass(element);
+            } else if (name === 'balloonLayout') {
+                layout = _layouts2.default.createBalloonLayoutClass(element);
+            }
+
+            this._marker.options.set(name, layout);
+        }
+
+        /**
+         * Destroy marker
+         */
+
+    }, {
+        key: 'destroy',
+        value: function destroy() {
+            this.events.removeAll();
+            this._marker.setParent(null);
+            this._marker = null;
+        }
+    }, {
+        key: '_setupMarkerProperties',
+        value: function _setupMarkerProperties() {
+            var _this = this;
+
+            var properties = this.properties;
+
+            Object.keys(properties).forEach(function (propName) {
+                _this.setProperty(propName, properties[propName]);
+            });
+        }
+    }, {
+        key: '_setupMarkerOptions',
+        value: function _setupMarkerOptions() {
+            var _this2 = this;
+
+            var options = this.options;
+
+            Object.keys(options).forEach(function (optName) {
+                _this2.setOption(optName, options[optName]);
+            });
+        }
+    }]);
+
+    return MarkerController;
+}();
+
+exports.default = MarkerController;
+
+/***/ }),
+
+/***/ "./node_modules/yandex-map-react/lib/controllers/PanoramaController.js":
+/*!*****************************************************************************!*\
+  !*** ./node_modules/yandex-map-react/lib/controllers/PanoramaController.js ***!
+  \*****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _api = __webpack_require__(/*! ../api */ "./node_modules/yandex-map-react/lib/api.js");
+
+var _api2 = _interopRequireDefault(_api);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var PanoramaController = function () {
+    function PanoramaController(func) {
+        _classCallCheck(this, PanoramaController);
+
+        this._isPanoramas = func;
+    }
+
+    _createClass(PanoramaController, [{
+        key: 'createPanorama',
+        value: function createPanorama(container, state, options) {
+
+            this._container = container;
+            this._coordinates = state.center;
+            this._options = options;
+            this._panorama = _api2.default.getAPI().panorama;
+
+            return this;
+        }
+    }, {
+        key: 'locate',
+        value: function locate(showService) {
+            var _this = this;
+
+            if (this.isSupported()) {
+                this._panorama.locate(this._coordinates).done(function (panoramas) {
+
+                    _this._isPanoramas(Boolean(panoramas.length));
+
+                    if (showService) {
+                        _this.show(panoramas);
+                    }
+                }, function (error) {
+                    return _this.error(error);
+                });
+            } else {
+                this.error({
+                    message: 'Браузер не поддерживается плеером.'
+                });
+            }
+        }
+    }, {
+        key: 'show',
+        value: function show(panoramas) {
+            if (panoramas.length > 0) {
+                var player = new this._panorama.Player(this._container, panoramas[0], this._options);
+
+                player.events.add('destroy', this.destroy.bind(this));
+            }
+        }
+    }, {
+        key: 'error',
+        value: function error(_error) {
+            console.error(_error.message);
+        }
+    }, {
+        key: 'isSupported',
+        value: function isSupported() {
+            return this._panorama.isSupported();
+        }
+    }, {
+        key: 'destroy',
+        value: function destroy() {
+            this._panorama = null;
+
+            if (this._options.parentFunct) {
+                this._options.parentFunct();
+            }
+        }
+    }]);
+
+    return PanoramaController;
+}();
+
+exports.default = PanoramaController;
+
+/***/ }),
+
+/***/ "./node_modules/yandex-map-react/lib/controllers/layouts.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/yandex-map-react/lib/controllers/layouts.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _api = __webpack_require__(/*! ../api */ "./node_modules/yandex-map-react/lib/api.js");
+
+var _api2 = _interopRequireDefault(_api);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function detectImagesLoaded(element) {
+    var images = Array.from(element.querySelectorAll('img') || []);
+
+    if (images.length === 0) {
+        return Promise.resolve();
+    }
+
+    return Promise.all(images.map(function (image) {
+        return new Promise(function (resolve) {
+            if (image.complete) {
+                resolve();
+                return;
+            }
+            image.onload = image.onerror = resolve;
+        });
+    }));
+}
+
+function createLayout(_ref) {
+    var domElement = _ref.domElement,
+        _ref$extendMethods = _ref.extendMethods,
+        extendMethods = _ref$extendMethods === undefined ? {} : _ref$extendMethods;
+
+    var LayoutClass = _api2.default.getAPI().templateLayoutFactory.createClass('<i></i>', Object.assign({
+        build: function build() {
+            LayoutClass.superclass.build.call(this);
+
+            this.options = this.getData().options;
+
+            this._setupContent(domElement);
+            this._updateSize();
+
+            detectImagesLoaded(this.getElement()).then(this._updateMarkerShape.bind(this));
+        },
+
+        getShape: function getShape() {
+            return new (_api2.default.getAPI().shape.Rectangle)(new (_api2.default.getAPI().geometry.pixel.Rectangle)([[0, 0], [this._size[0], this._size[1]]]));
+        },
+
+        _updateMarkerShape: function _updateMarkerShape() {
+            this._updateSize();
+            this.events.fire('shapechange');
+        },
+
+        _setupContent: function _setupContent(domElement) {
+            var element = this.getElement();
+            element.appendChild(domElement);
+        },
+
+        _updateSize: function _updateSize() {
+            this._size = this._getSize();
+        },
+
+        _getSize: function _getSize() {
+            var elementSize = [];
+
+            if (this.getElement()) {
+                var element = this.getElement().querySelector('.icon-content');
+
+                if (element) {
+                    elementSize = [element.offsetWidth, element.offsetHeight];
+                }
+            }
+
+            return elementSize;
+        }
+    }, extendMethods));
+
+    return LayoutClass;
+}
+
+exports.default = {
+    createIconLayoutClass: function createIconLayoutClass(domElement) {
+        return createLayout({
+            domElement: domElement,
+            extendMethods: {
+                _updateSize: function _updateSize() {
+                    var _this = this;
+
+                    var geoObject = void 0;
+                    var oldSize = this._size;
+
+                    this._size = this._getSize();
+
+                    // Update layout offset.
+                    if (this._size.length) {
+                        if (!oldSize || oldSize[0] !== this._size[0] || oldSize[1] !== this._size[1]) {
+                            geoObject = this.getData().geoObject;
+
+                            if (geoObject.getOverlaySync()) {
+                                geoObject.options.set('iconOffset', [-this._size[0] / 2, -this._size[1]]);
+                            } else {
+                                geoObject.getOverlay().then(function () {
+                                    geoObject.options.set('iconOffset', [-_this._size[0] / 2, -_this._size[1]]);
+                                });
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    },
+
+    createBalloonLayoutClass: function createBalloonLayoutClass(domElement) {
+        return createLayout({ domElement: domElement });
+    }
+};
+
+/***/ }),
+
+/***/ "./node_modules/yandex-map-react/lib/index.js":
+/*!****************************************************!*\
+  !*** ./node_modules/yandex-map-react/lib/index.js ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.Panorama = exports.ConstructorJSONImport = exports.BalloonLayout = exports.MarkerLayout = exports.Marker = exports.Map = undefined;
+
+var _MapContainer = __webpack_require__(/*! ./MapContainer */ "./node_modules/yandex-map-react/lib/MapContainer.js");
+
+var _MapContainer2 = _interopRequireDefault(_MapContainer);
+
+var _MapMarker = __webpack_require__(/*! ./MapMarker */ "./node_modules/yandex-map-react/lib/MapMarker.js");
+
+var _MapMarker2 = _interopRequireDefault(_MapMarker);
+
+var _MarkerLayout = __webpack_require__(/*! ./MarkerLayout */ "./node_modules/yandex-map-react/lib/MarkerLayout.js");
+
+var _MarkerLayout2 = _interopRequireDefault(_MarkerLayout);
+
+var _BalloonLayout = __webpack_require__(/*! ./BalloonLayout */ "./node_modules/yandex-map-react/lib/BalloonLayout.js");
+
+var _BalloonLayout2 = _interopRequireDefault(_BalloonLayout);
+
+var _ConstructorJSONImport = __webpack_require__(/*! ./ConstructorJSONImport */ "./node_modules/yandex-map-react/lib/ConstructorJSONImport.js");
+
+var _ConstructorJSONImport2 = _interopRequireDefault(_ConstructorJSONImport);
+
+var _PanoramaContainer = __webpack_require__(/*! ./PanoramaContainer */ "./node_modules/yandex-map-react/lib/PanoramaContainer.js");
+
+var _PanoramaContainer2 = _interopRequireDefault(_PanoramaContainer);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.Map = _MapContainer2.default;
+exports.Marker = _MapMarker2.default;
+exports.MarkerLayout = _MarkerLayout2.default;
+exports.BalloonLayout = _BalloonLayout2.default;
+exports.ConstructorJSONImport = _ConstructorJSONImport2.default;
+exports.Panorama = _PanoramaContainer2.default;
+
+/***/ }),
+
+/***/ "./node_modules/yandex-map-react/lib/utils/decorators.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/yandex-map-react/lib/utils/decorators.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.eventsDecorator = eventsDecorator;
+
+var _eventsHandler = __webpack_require__(/*! ./eventsHandler */ "./node_modules/yandex-map-react/lib/utils/eventsHandler.js");
+
+function eventsDecorator(Component, _ref) {
+    var supportEvents = _ref.supportEvents;
+
+    Object.defineProperty(Component.prototype, '_setupEvents', {
+        enumerable: false,
+        configurable: true,
+        writable: true,
+        value: function value() {
+            (0, _eventsHandler.register)(this.getController(), this.props, supportEvents);
+        }
+    });
+
+    return Component;
+}
+
+/***/ }),
+
+/***/ "./node_modules/yandex-map-react/lib/utils/eventsHandler.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/yandex-map-react/lib/utils/eventsHandler.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.register = register;
+
+
+function toOnEventName(name) {
+    return "on" + name.substr(0, 1).toUpperCase() + name.substr(1);
+}
+
+/**
+ * Register event callback on api instance
+ * @param  {Object} controller
+ * @param  {Object} props React component `props`
+ * @param  {Array} eventsList Events supported in API (specific for different objects)
+ */
+function register(controller, props, eventsList) {
+    eventsList.forEach(function (eventName) {
+        var onEventName = toOnEventName(eventName);
+        if (props.hasOwnProperty(onEventName)) {
+            controller.events.add(eventName, props[onEventName]);
+        }
+    });
+}
+
+/***/ }),
+
+/***/ "./node_modules/yandex-map-react/lib/utils/loaders/fetchScript.js":
+/*!************************************************************************!*\
+  !*** ./node_modules/yandex-map-react/lib/utils/loaders/fetchScript.js ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = fetchScript;
+function fetchScript(url) {
+    return new Promise(function (resolve, reject) {
+        var script = document.createElement('script');
+        script.onload = resolve;
+        script.onerror = reject;
+        script.src = url;
+
+        var beforeScript = document.getElementsByTagName('script')[0];
+        beforeScript.parentNode.insertBefore(script, beforeScript);
+    });
+}
+
+/***/ }),
+
+/***/ "./node_modules/yandex-map-react/lib/utils/loaders/loadApi.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/yandex-map-react/lib/utils/loaders/loadApi.js ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = loadApi;
+
+var _fetchScript = __webpack_require__(/*! ./fetchScript */ "./node_modules/yandex-map-react/lib/utils/loaders/fetchScript.js");
+
+var _fetchScript2 = _interopRequireDefault(_fetchScript);
+
+var _configs = __webpack_require__(/*! ../../configs */ "./node_modules/yandex-map-react/lib/configs/index.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var loadPromise = void 0;
+
+var enabledAPIParams = ['lang', 'apikey', 'coordorder', 'load', 'mode'];
+var successCallbackName = '_$_api_success';
+var errorCallbackName = '_$_api_error';
+
+var defaultOptions = {
+    lang: 'ru_RU',
+    coordorder: 'latlong',
+    load: 'package.full',
+    mode: 'release',
+    ns: '',
+    onload: successCallbackName,
+    onerror: errorCallbackName
+};
+
+function generateURL(options) {
+    var params = Object.assign({}, defaultOptions);
+    Object.keys(options).filter(function (key) {
+        return enabledAPIParams.indexOf(key) !== -1;
+    }).forEach(function (key) {
+        params[key] = options[key];
+    });
+
+    var queryString = Object.keys(params).map(function (key) {
+        return key + '=' + params[key];
+    }).join('&');
+
+    return 'https://' + _configs.apiConfig.host + '/' + (options.version || _configs.apiConfig.version) + '/?' + queryString;
+}
+
+function loadApi(options) {
+    if (loadPromise) {
+        return loadPromise;
+    }
+
+    loadPromise = new Promise(function (resolve, reject) {
+
+        window[successCallbackName] = function (ymaps) {
+            resolve(ymaps);
+            window[successCallbackName] = null;
+        };
+
+        window[errorCallbackName] = function (error) {
+            reject(error);
+            window[errorCallbackName] = null;
+        };
+
+        (0, _fetchScript2.default)(generateURL(options));
+    });
+
+    return loadPromise;
+}
+
+/***/ }),
+
 /***/ "./pages/index.js":
 /*!************************!*\
   !*** ./pages/index.js ***!
@@ -80761,11 +83285,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _lib_withI18next__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../lib/withI18next */ "./lib/withI18next.js");
-/* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../common */ "./common/index.js");
-/* harmony import */ var _api_firebase__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../api/firebase */ "./api/firebase.js");
-/* harmony import */ var _home_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./home.scss */ "./pages/home.scss");
-/* harmony import */ var _home_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_home_scss__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/head */ "./node_modules/next/head.js");
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _lib_withI18next__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../lib/withI18next */ "./lib/withI18next.js");
+/* harmony import */ var yandex_map_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! yandex-map-react */ "./node_modules/yandex-map-react/lib/index.js");
+/* harmony import */ var yandex_map_react__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(yandex_map_react__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../common */ "./common/index.js");
+/* harmony import */ var _api_firebase__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../api/firebase */ "./api/firebase.js");
+/* harmony import */ var _home_scss__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./home.scss */ "./pages/home.scss");
+/* harmony import */ var _home_scss__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_home_scss__WEBPACK_IMPORTED_MODULE_7__);
 
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -80804,7 +83332,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-var db = _api_firebase__WEBPACK_IMPORTED_MODULE_4__["default"].firestore();
+
+
+var db = _api_firebase__WEBPACK_IMPORTED_MODULE_6__["default"].firestore();
 
 
 var Index =
@@ -81125,7 +83655,10 @@ function (_React$Component) {
           lng = _this$props.lng;
       return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "Home d-flex flex-column"
-      }, this.state.loading && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_common__WEBPACK_IMPORTED_MODULE_3__["Preloader"], null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_2___default.a, null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("title", null, "My page title"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("meta", {
+        name: "viewport",
+        content: "initial-scale=1.0, width=device-width"
+      })), this.state.loading && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_common__WEBPACK_IMPORTED_MODULE_5__["Preloader"], null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "lines-cover row mx-0 d-none d-md-flex"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "col-3"
@@ -81141,11 +83674,11 @@ function (_React$Component) {
         className: "line"
       })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "col-3"
-      })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_common__WEBPACK_IMPORTED_MODULE_3__["Header"], {
+      })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_common__WEBPACK_IMPORTED_MODULE_5__["Header"], {
         bgColor: "#000"
       }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: this.isActive()
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_common__WEBPACK_IMPORTED_MODULE_3__["OrderModal"], {
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_common__WEBPACK_IMPORTED_MODULE_5__["OrderModal"], {
         closeModal: this.createOrder
       })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "landing d-flex flex-column w-100"
@@ -81229,10 +83762,14 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h2", null, t("mainPage.ourPartners.subTitle")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", null, t("mainPage.ourPartners.title")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "row mx-0 w-100 justify-content-md-center align-items-center"
       }, this.state.partners.map(function (item) {
-        return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
+        return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+          className: "image-wrap",
+          href: item.ru.title,
+          target: "_blank"
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
           src: item.image,
           alt: ""
-        });
+        }));
       }))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         id: "works",
         style: {
@@ -81248,10 +83785,10 @@ function (_React$Component) {
         className: "col-md-6 col-9 text-md-center "
       }, t("mainPage.ourWorks.title")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
         className: "col-md-3 d-md-block d-none text-right",
-        href: "/ProjectList"
+        href: "/plist"
       }, t("mainPage.ourWorks.seeMore"), "\u2192"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
         className: "d-md-none mr-3",
-        href: "/ProjectList"
+        href: "/plist"
       }, t("mainPage.ourWorks.seeMoreMobile"), "\u2192")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "row d-flex justify-content-between mx-0 mt-4"
       }, this.state.projects.map(function (item) {
@@ -81284,7 +83821,7 @@ function (_React$Component) {
 
         return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
           className: "col-md-6 col-12 p-3"
-        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_common__WEBPACK_IMPORTED_MODULE_3__["ProjectCard"], {
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_common__WEBPACK_IMPORTED_MODULE_5__["ProjectCard"], {
           image: item.images[0],
           id: item.id,
           item: data
@@ -81348,7 +83885,7 @@ function (_React$Component) {
 
         return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
           className: "col-md-3 col-6"
-        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_common__WEBPACK_IMPORTED_MODULE_3__["CatalogItem"], {
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_common__WEBPACK_IMPORTED_MODULE_5__["CatalogItem"], {
           image: item.image,
           onPress: _this2.createOrder,
           id: item.id,
@@ -81439,11 +83976,19 @@ function (_React$Component) {
         href: "mailto:contacts@press.kz"
       }, "contacts@press.kz")), ", ", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
         href: "tel:+77751534575"
-      }, "+ 7 (775) 153-45-75")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null), " ", t("mainPage.ourContacts.address")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        id: "map"
-      })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }, "+ 7 (775) 153-45-75")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null), " ", t("mainPage.ourContacts.address")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(yandex_map_react__WEBPACK_IMPORTED_MODULE_4__["Map"], {
+        width: "100%",
+        height: "20rem",
+        borderRadius: 3,
+        id: "map",
+        center: [43.2368614, 76.9154467],
+        zoom: 16
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(yandex_map_react__WEBPACK_IMPORTED_MODULE_4__["Marker"], {
+        lat: 43.2368614,
+        lon: 76.9154467
+      }))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "col-md-2 col-12"
-      })))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_common__WEBPACK_IMPORTED_MODULE_3__["Footer"], {
+      })))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_common__WEBPACK_IMPORTED_MODULE_5__["Footer"], {
         bgColor: "#000"
       }));
     }
@@ -81452,7 +83997,7 @@ function (_React$Component) {
   return Index;
 }(react__WEBPACK_IMPORTED_MODULE_1___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(_lib_withI18next__WEBPACK_IMPORTED_MODULE_2__["withI18next"])(["translation"])(Index));
+/* harmony default export */ __webpack_exports__["default"] = (Object(_lib_withI18next__WEBPACK_IMPORTED_MODULE_3__["withI18next"])(["translation"])(Index));
     (function (Component, route) {
       if(!Component) return
       if (false) {}

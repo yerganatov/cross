@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
-    "start": "NODE_ENV=production node server.js"
+    "start": "NODE_ENV=production node server.js -p $PORT"
   },
   "author": "",
   "license": "MIT",
@@ -25,7 +25,9 @@
     "node-sass": "^4.10.0",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
-    "react-i18next": "7.13.0"
+    "react-i18next": "7.13.0",
+    "react-yandex-maps": "^3.0.2",
+    "yandex-map-react": "^1.1.1"
   },
   "next": {
     "routes": {

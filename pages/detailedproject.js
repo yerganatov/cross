@@ -1,7 +1,8 @@
 import React, {Component} from "react";
 import "./DetailedProject.scss";
 import { withI18next } from '../lib/withI18next'
-import Link from 'next/link'
+import Head from 'next/head';
+
 import {Header, Footer, Preloader} from "../common";
 import firebase from "../api/firebase";
 const db = firebase.firestore();
@@ -117,6 +118,10 @@ class detailedProject extends Component {
         }
         return (
             <div className="DetailedProduct">
+                <Head>
+                    <title>My page title</title>
+                    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+                </Head>
                 {this.state.loading && <Preloader></Preloader>}
                 <Header bgColor="#000"/>
                 <div className="landing">

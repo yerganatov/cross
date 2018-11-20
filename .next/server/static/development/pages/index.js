@@ -575,11 +575,34 @@ function (_Component) {
           color: textColor
         },
         href: "mailto:contacts@press.kz"
-      }, "contacts@press.kz")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, "contacts@press.kz"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "d-flex"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        style: {
+          color: textColor
+        },
+        onClick: function onClick() {
+          return _this2.changeLanguage("ru-RU");
+        }
+      }, "RU"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "mx-2"
+      }, " / "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        style: {
+          color: textColor
+        },
+        onClick: function onClick() {
+          return _this2.changeLanguage("en");
+        }
+      }, "EN"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "mx-2"
+      }, " / "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        style: {
+          color: textColor
+        },
         onClick: function onClick() {
           return _this2.changeLanguage("gr");
         }
-      }, "gr"))));
+      }, "GR"))))));
     }
   }]);
 
@@ -1143,11 +1166,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _lib_withI18next__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../lib/withI18next */ "./lib/withI18next.js");
-/* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../common */ "./common/index.js");
-/* harmony import */ var _api_firebase__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../api/firebase */ "./api/firebase.js");
-/* harmony import */ var _home_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./home.scss */ "./pages/home.scss");
-/* harmony import */ var _home_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_home_scss__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/head */ "next/head");
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _lib_withI18next__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../lib/withI18next */ "./lib/withI18next.js");
+/* harmony import */ var yandex_map_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! yandex-map-react */ "yandex-map-react");
+/* harmony import */ var yandex_map_react__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(yandex_map_react__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../common */ "./common/index.js");
+/* harmony import */ var _api_firebase__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../api/firebase */ "./api/firebase.js");
+/* harmony import */ var _home_scss__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./home.scss */ "./pages/home.scss");
+/* harmony import */ var _home_scss__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_home_scss__WEBPACK_IMPORTED_MODULE_7__);
 
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -1186,7 +1213,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-var db = _api_firebase__WEBPACK_IMPORTED_MODULE_4__["default"].firestore();
+
+
+var db = _api_firebase__WEBPACK_IMPORTED_MODULE_6__["default"].firestore();
 
 
 var Index =
@@ -1507,7 +1536,10 @@ function (_React$Component) {
           lng = _this$props.lng;
       return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "Home d-flex flex-column"
-      }, this.state.loading && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_common__WEBPACK_IMPORTED_MODULE_3__["Preloader"], null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_2___default.a, null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("title", null, "My page title"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("meta", {
+        name: "viewport",
+        content: "initial-scale=1.0, width=device-width"
+      })), this.state.loading && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_common__WEBPACK_IMPORTED_MODULE_5__["Preloader"], null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "lines-cover row mx-0 d-none d-md-flex"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "col-3"
@@ -1523,11 +1555,11 @@ function (_React$Component) {
         className: "line"
       })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "col-3"
-      })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_common__WEBPACK_IMPORTED_MODULE_3__["Header"], {
+      })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_common__WEBPACK_IMPORTED_MODULE_5__["Header"], {
         bgColor: "#000"
       }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: this.isActive()
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_common__WEBPACK_IMPORTED_MODULE_3__["OrderModal"], {
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_common__WEBPACK_IMPORTED_MODULE_5__["OrderModal"], {
         closeModal: this.createOrder
       })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "landing d-flex flex-column w-100"
@@ -1611,10 +1643,14 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h2", null, t("mainPage.ourPartners.subTitle")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", null, t("mainPage.ourPartners.title")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "row mx-0 w-100 justify-content-md-center align-items-center"
       }, this.state.partners.map(function (item) {
-        return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
+        return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+          className: "image-wrap",
+          href: item.ru.title,
+          target: "_blank"
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
           src: item.image,
           alt: ""
-        });
+        }));
       }))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         id: "works",
         style: {
@@ -1630,10 +1666,10 @@ function (_React$Component) {
         className: "col-md-6 col-9 text-md-center "
       }, t("mainPage.ourWorks.title")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
         className: "col-md-3 d-md-block d-none text-right",
-        href: "/ProjectList"
+        href: "/plist"
       }, t("mainPage.ourWorks.seeMore"), "\u2192"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
         className: "d-md-none mr-3",
-        href: "/ProjectList"
+        href: "/plist"
       }, t("mainPage.ourWorks.seeMoreMobile"), "\u2192")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "row d-flex justify-content-between mx-0 mt-4"
       }, this.state.projects.map(function (item) {
@@ -1666,7 +1702,7 @@ function (_React$Component) {
 
         return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
           className: "col-md-6 col-12 p-3"
-        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_common__WEBPACK_IMPORTED_MODULE_3__["ProjectCard"], {
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_common__WEBPACK_IMPORTED_MODULE_5__["ProjectCard"], {
           image: item.images[0],
           id: item.id,
           item: data
@@ -1730,7 +1766,7 @@ function (_React$Component) {
 
         return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
           className: "col-md-3 col-6"
-        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_common__WEBPACK_IMPORTED_MODULE_3__["CatalogItem"], {
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_common__WEBPACK_IMPORTED_MODULE_5__["CatalogItem"], {
           image: item.image,
           onPress: _this2.createOrder,
           id: item.id,
@@ -1821,11 +1857,19 @@ function (_React$Component) {
         href: "mailto:contacts@press.kz"
       }, "contacts@press.kz")), ", ", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
         href: "tel:+77751534575"
-      }, "+ 7 (775) 153-45-75")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null), " ", t("mainPage.ourContacts.address")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        id: "map"
-      })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }, "+ 7 (775) 153-45-75")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null), " ", t("mainPage.ourContacts.address")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(yandex_map_react__WEBPACK_IMPORTED_MODULE_4__["Map"], {
+        width: "100%",
+        height: "20rem",
+        borderRadius: 3,
+        id: "map",
+        center: [43.2368614, 76.9154467],
+        zoom: 16
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(yandex_map_react__WEBPACK_IMPORTED_MODULE_4__["Marker"], {
+        lat: 43.2368614,
+        lon: 76.9154467
+      }))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "col-md-2 col-12"
-      })))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_common__WEBPACK_IMPORTED_MODULE_3__["Footer"], {
+      })))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_common__WEBPACK_IMPORTED_MODULE_5__["Footer"], {
         bgColor: "#000"
       }));
     }
@@ -1834,7 +1878,7 @@ function (_React$Component) {
   return Index;
 }(react__WEBPACK_IMPORTED_MODULE_1___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(_lib_withI18next__WEBPACK_IMPORTED_MODULE_2__["withI18next"])(["translation"])(Index));
+/* harmony default export */ __webpack_exports__["default"] = (Object(_lib_withI18next__WEBPACK_IMPORTED_MODULE_3__["withI18next"])(["translation"])(Index));
 
 /***/ }),
 
@@ -1938,6 +1982,17 @@ module.exports = require("moment/locale/ru");
 
 /***/ }),
 
+/***/ "next/head":
+/*!****************************!*\
+  !*** external "next/head" ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("next/head");
+
+/***/ }),
+
 /***/ "next/link":
 /*!****************************!*\
   !*** external "next/link" ***!
@@ -1968,6 +2023,17 @@ module.exports = require("react");
 /***/ (function(module, exports) {
 
 module.exports = require("react-i18next");
+
+/***/ }),
+
+/***/ "yandex-map-react":
+/*!***********************************!*\
+  !*** external "yandex-map-react" ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("yandex-map-react");
 
 /***/ })
 

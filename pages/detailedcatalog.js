@@ -3,6 +3,7 @@ import "./DetailedCatalogProject.scss";
 import { withI18next } from '../lib/withI18next'
 import {Header, Footer, Preloader, OrderModal, MainButton } from "../common";
 import firebase from "../api/firebase";
+import Head from "next/head";
 const db = firebase.firestore();
 
 
@@ -92,6 +93,10 @@ class Detailedcatalog extends Component {
         const { t } = this.props;
         return (
             <div className="d-flex flex-column">
+                <Head>
+                    <title>My page title</title>
+                    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+                </Head>
                 {this.state.loading && <Preloader></Preloader>}
                 <Header bgColor={"#fff"} textColor={"#000"}/>
                 <div className={this.isActive()}>

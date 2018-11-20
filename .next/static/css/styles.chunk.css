@@ -6379,149 +6379,6 @@ a.text-dark:hover, a.text-dark:focus {
     color: inherit;
     border-color: #dee2e6; } }
 
-.DetailedProduct {
-  background: black;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh; }
-  .DetailedProduct .landing {
-    margin-top: 8rem;
-    padding-left: 10rem;
-    padding-right: 10rem; }
-    .DetailedProduct .landing .sub-title {
-      font-size: 1rem;
-      font-family: Montserrat;
-      font-weight: 500;
-      font-style: normal;
-      font-stretch: normal;
-      line-height: normal;
-      letter-spacing: normal;
-      color: #ffffff; }
-    .DetailedProduct .landing h1 {
-      margin-bottom: 1.2rem;
-      margin-top: 0.8rem;
-      font-family: Montserrat;
-      font-weight: bold;
-      font-style: normal;
-      font-stretch: normal;
-      line-height: 1.5;
-      letter-spacing: normal;
-      color: #ffffff; }
-      @media (max-width: 768px) {
-        .DetailedProduct .landing h1 {
-          font-size: 1.2rem; } }
-    .DetailedProduct .landing .tag-list .tag {
-      font-family: Montserrat;
-      font-size: 1rem;
-      color: #01ACF2;
-      font-weight: 300;
-      margin-right: 0.4rem;
-      font-style: normal;
-      font-stretch: normal;
-      line-height: normal;
-      letter-spacing: normal; }
-    .DetailedProduct .landing .details {
-      margin-bottom: 30px; }
-      .DetailedProduct .landing .details h3 {
-        font-family: "Montserrat";
-        font-size: 1rem;
-        margin-bottom: 1rem;
-        font-weight: 500;
-        font-style: normal;
-        font-stretch: normal;
-        line-height: normal;
-        letter-spacing: normal;
-        color: #ffffff; }
-      .DetailedProduct .landing .details p {
-        margin-bottom: 0;
-        font-size: 1rem;
-        white-space: pre-line;
-        font-family: "Open Sans";
-        font-weight: 300;
-        font-style: normal;
-        font-stretch: normal;
-        line-height: 1.5;
-        letter-spacing: normal;
-        color: #ffffff; }
-    .DetailedProduct .landing .image-gallery {
-      position: sticky;
-      top: 0; }
-    @media (max-width: 798px) {
-      .DetailedProduct .landing {
-        margin-top: 10vh;
-        padding-left: 2rem;
-        padding-right: 2rem; }
-        .DetailedProduct .landing .image-gallery {
-          position: unset;
-          width: auto;
-          height: auto; } }
-  .DetailedProduct .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; }
-  .DetailedProduct ul {
-    list-style: none; }
-  .DetailedProduct .thumbnails {
-    display: flex;
-    line-height: 0;
-    padding: 0; }
-    .DetailedProduct .thumbnails li {
-      width: 5rem;
-      height: 5rem; }
-    .DetailedProduct .thumbnails a {
-      width: 100%;
-      height: 100%;
-      display: block;
-      opacity: .5;
-      transition: .5s; }
-      .DetailedProduct .thumbnails a:hover {
-        opacity: 1; }
-    .DetailedProduct .thumbnails img {
-      padding: 5px;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top; }
-  .DetailedProduct .slides {
-    overflow: hidden;
-    width: 100%;
-    height: 20rem;
-    padding: 0;
-    position: relative;
-    margin-bottom: 2rem; }
-    .DetailedProduct .slides li {
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      position: absolute;
-      z-index: 1;
-      transition: .5s; }
-    .DetailedProduct .slides img {
-      height: 100%;
-      width: 100%;
-      object-fit: contain;
-      object-position: center; }
-  .DetailedProduct .slides li:target,
-  .DetailedProduct .slides li:focus {
-    z-index: 3;
-    opacity: 1;
-    -webkit-animation: slide 1s 1; }
-  .DetailedProduct .slides li:not(:target) {
-    -webkit-animation: hidden 1s 1; }
-
-@keyframes slide {
-  0% {
-    transform: translateY(-100%); }
-  100% {
-    transform: translateY(0%); } }
-
-@keyframes hidden {
-  0% {
-    z-index: 2; }
-  100% {
-    z-index: 2; } }
-
 .Header {
   position: fixed;
   min-height: 8rem;
@@ -7189,11 +7046,14 @@ a.text-dark:hover, a.text-dark:focus {
         font-size: 6rem;
         width: 100%;
         text-align: center; }
-      .Home .landing .our-partners img {
+      .Home .landing .our-partners .image-wrap {
         height: 100%;
         width: 12.5%;
         object-fit: contain;
         padding: 2rem; }
+        .Home .landing .our-partners .image-wrap img {
+          width: 100%;
+          height: 100%; }
       @media (max-width: 768px) {
         .Home .landing .our-partners {
           padding-left: 1rem;
@@ -7202,7 +7062,7 @@ a.text-dark:hover, a.text-dark:focus {
           .Home .landing .our-partners h2 {
             top: 0rem;
             font-size: 2.4rem; }
-          .Home .landing .our-partners img {
+          .Home .landing .our-partners .image-wrap {
             height: auto;
             width: 50%;
             padding: 2.5rem; } }
@@ -7459,11 +7319,8 @@ a.text-dark:hover, a.text-dark:focus {
         transition: .3s; }
         .Home .landing .contact-us form button:hover {
           opacity: .9; }
-      .Home .landing .contact-us #map {
-        width: 100%;
-        height: 20rem; }
-        .Home .landing .contact-us #map ymaps {
-          border-radius: 3px; }
+      .Home .landing .contact-us ymaps {
+        border-radius: 3px; }
       @media (max-width: 768px) {
         .Home .landing .contact-us {
           padding-left: 2rem;

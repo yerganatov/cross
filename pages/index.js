@@ -1,5 +1,8 @@
 import React from 'react';
+import Head from 'next/head'
 import { withI18next } from '../lib/withI18next'
+
+import { Map, Marker, MarkerLayout } from 'yandex-map-react';
 
 import {Header, Footer, ProjectCard, CatalogItem, Preloader, OrderModal} from "../common";
 import firebase from "../api/firebase";
@@ -129,9 +132,12 @@ class Index extends React.Component {
         const {t,  i18n, lng} = this.props;
 
 
-
         return (
             <div className="Home d-flex flex-column">
+                <Head>
+                    <title>My page title</title>
+                    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+                </Head>
                 {this.state.loading && <Preloader></Preloader>}
                 <div className="lines-cover row mx-0 d-none d-md-flex">
                     <div className="col-3"></div>
@@ -229,7 +235,9 @@ class Index extends React.Component {
                             {
                                 this.state.partners.map((item) => {
                                     return(
-                                        <img src={item.image} alt=""/>
+                                        <a className="image-wrap" href={item.ru.title} target="_blank">
+                                            <img src={item.image} alt=""/>
+                                        </a>
                                     )
                                 })
                             }
@@ -244,8 +252,8 @@ class Index extends React.Component {
                             <h3 className="col-md-6 col-9 text-md-center ">{t("mainPage.ourWorks.title")}</h3>
 
                             <a className="col-md-3 d-md-block d-none text-right"
-                               href="/ProjectList">{t("mainPage.ourWorks.seeMore")}→</a>
-                            <a className="d-md-none mr-3" href="/ProjectList">{t("mainPage.ourWorks.seeMoreMobile")}→</a>
+                               href="/plist">{t("mainPage.ourWorks.seeMore")}→</a>
+                            <a className="d-md-none mr-3" href="/plist">{t("mainPage.ourWorks.seeMoreMobile")}→</a>
                         </div>
                         <div className="row d-flex justify-content-between mx-0 mt-4">
                             {this.state.projects.map(item => {
@@ -399,7 +407,9 @@ class Index extends React.Component {
                                 <p><span><a href="mailto:contacts@press.kz">contacts@press.kz</a></span>, <span><a
                                     href="tel:+77751534575">+ 7 (775) 153-45-75</a></span>
                                     <br/> {t("mainPage.ourContacts.address")}</p>
-                                <div id="map"></div>
+                                <Map width={"100%"} height={"20rem"} borderRadius={3} id="map" center={[43.2368614,76.9154467]} zoom={16}>
+                                    <Marker lat={43.2368614} lon={76.9154467} />
+                                </Map>
                             </div>
                             <div className="col-md-2 col-12"></div>
                         </div>

@@ -79,10 +79,20 @@ class Header extends Component {
                             <a style={{color:textColor}} >{t("navigation.address")}</a>
                             <a style={{color:textColor}}  href="tel:+77751534575">+ 7 (775) 153-45-75</a>
                             <a style={{color:textColor}}  href="mailto:contacts@press.kz">contacts@press.kz</a>
+                            <div className="d-flex">
+                                <a style={{color:textColor}} onClick={() => this.changeLanguage("ru-RU")}>
+                                    RU
+                                </a>
+                                <span className="mx-2"> / </span>
+                                <a style={{color:textColor}} onClick={() => this.changeLanguage("en")}>
+                                    EN
+                                </a>
+                                <span className="mx-2"> / </span>
+                                <a style={{color:textColor}} onClick={() => this.changeLanguage("gr")}>
+                                    GR
+                                </a>
+                            </div>
                         </div>
-                        <button onClick={() => this.changeLanguage("gr")}>
-                            gr
-                        </button>
                     </div>
                 </nav>
             </div>

@@ -261,11 +261,15 @@
         width: 100%;
         text-align: center;
       }
-      img {
+      .image-wrap {
         height: 100%;
         width: 12.5%;
         object-fit: contain;
         padding: 2rem;
+        img {
+          width: 100%;
+          height: 100%;
+        }
       }
       @media (max-width: 768px) {
         padding-left: 1rem;
@@ -275,7 +279,7 @@
           top: 0rem;
           font-size: 2.4rem;
         }
-        img {
+        .image-wrap {
           height: auto;
           width: 50%;
           padding: 2.5rem;
@@ -582,13 +586,10 @@
           }
         }
       }
-      #map {
-        width: 100%;
-        height: 20rem;
-        ymaps {
-          border-radius: 3px;
-        }
+      ymaps {
+        border-radius: 3px;
       }
+
 
       @media (max-width: 768px) {
         padding-left: 2rem;

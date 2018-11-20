@@ -4,6 +4,7 @@ import { withI18next } from '../lib/withI18next'
 import Link from 'next/link'
 import {Header, Footer, Preloader,CatalogItem} from "../common";
 import firebase from "../api/firebase";
+import Head from "next/head";
 const db = firebase.firestore();
 
 class Catalog extends Component{
@@ -40,6 +41,10 @@ class Catalog extends Component{
         const { t, i18n, lng } = this.props;
         return(
             <div className="Catalog d-flex flex-column">
+                <Head>
+                    <title>My page title</title>
+                    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+                </Head>
                 {this.state.loading && <Preloader></Preloader>}
                 <Header bgColor="#fff" textColor="#000"/>
                 <div className="main-article w-100 d-flex flex-column align-items-center">
