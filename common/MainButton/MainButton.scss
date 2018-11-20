@@ -1,0 +1,39 @@
+.MainButton {
+  width: fit-content;
+  border-color: unset !important;
+  padding: 0.8rem 1.6rem !important;
+  border-radius: 3px !important;
+  border-image-source: linear-gradient(90deg, #02d6fa, #01acf2) !important;
+  border-image-slice: 1 !important;
+  border: 1px solid !important;
+  cursor: pointer;
+  transition: .3s;
+  @media (max-width: 768px) {
+    padding: .6rem .6rem !important;
+    width: 100%;
+  }
+  p{
+    transition: .3s;
+    cursor: pointer;
+    font-family: Montserrat;
+    font-size: 1rem;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #1e2229;
+    @media (max-width: 768px) {
+      font-size: .85rem;
+    }
+  }
+  &:hover p {
+    color: #01ACF2;
+  }
+  &:active p {
+    color: #0080B3;
+  }
+  &:hover {
+
+  }
+}

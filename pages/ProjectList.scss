@@ -1,0 +1,50 @@
+.ProjectList {
+  background-color: #000;
+  .info-project-list {
+    padding-top: 8rem;
+    position: relative;
+    padding-left: 10rem;
+    padding-right: 10rem;
+    h3 {
+      font-family: Montserrat;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      color: #fff;
+      width: 100%;
+      font-size: 1.2rem;
+    }
+    h2 {
+      position: absolute;
+      top: 7rem;
+      left: 0;
+      opacity: 0.05;
+      color: #fff;
+      font-family: Montserrat;
+      font-weight: bold;
+      font-size: 6rem;
+      width: 100%;
+    }
+
+    .line {
+      width:43%;
+      border-bottom: 1px solid #979797;
+    }
+    .year-of-event {
+      white-space: nowrap;
+      font-family: Montserrat;
+      font-weight: bold;
+      color: #fff;
+      font-size: 1.2rem;
+    }
+    @media (max-width: 768px) {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      padding-top: 10vh;
+      padding-bottom: 2rem;
+      h2 {
+        font-size: 2.4rem;
+        top: 8rem;
+      }
+    }
+  }
+}

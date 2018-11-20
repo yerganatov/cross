@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700&subset=cyrillic');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400&subset=cyrillic');
+html,body {
+  overflow-x: hidden !important;
+  background-color: #000;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+.html-overflow {
+  overflow: hidden!important;
+}
+* {
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+  -webkit-overflow-scrolling: touch;
+}
+
+p,h1,h2,h3,h4,h5,h6,span {
+  cursor: default;
+}
+
+a, a:hover, a:active {
+  cursor: pointer;
+  text-decoration: none;
+}
+img {
+  user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+@function rem($size) {
+@return $size / 16 * 1rem;
+}
+*{
+@media (max-width: 1280px) {
+  font-size: 13px;
+}
+@media (max-width: 991px) {
+  font-size: 12px;
+}
+@media (max-width: 880px) {
+  font-size: 10px;
+}
+@media (max-width: 768px) {
+  font-size: 14px;
+}
+}
+
+.modalViewWrap{
+  opacity: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  position: fixed;
+  .OrderModal {
+    .modal-view {
+      transition: all .5s;
+      transform: translateY(-100vh);
+      opacity: 0;
+    }
+  }
+}
+.opened{
+  opacity: 1;
+  z-index: 1000000;
+  .OrderModal {
+    .modal-view {
+      transition: all .5s;
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+}

@@ -1,0 +1,128 @@
+.modalViewWrap{
+  opacity: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  position: fixed;
+  .OrderModal {
+    .modal-view {
+      transition: all .5s;
+      transform: translateY(-100vh);
+      opacity: 0;
+    }
+  }
+}
+.opened{
+  opacity: 1;
+  z-index: 1000000;
+  .OrderModal {
+    .modal-view {
+      transition: all .5s;
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+}
+.DetailedCatalogProject {
+  margin-top: 10rem;
+  padding-left: 10rem;
+  padding-right: 10rem;
+  padding-bottom: 2rem;
+  @media (max-width: 798px) {
+    margin-top: 10vh;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .sub-title{
+    font-size: 1rem;
+    font-family: Montserrat;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+  }
+  h1{
+    margin-bottom: 1.2rem;
+    margin-top: 0.8rem;
+    font-size: 1.6rem;
+    font-family: Montserrat;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #000000;
+    @media (max-width: 768px) {
+      font-size: 1.2rem;
+    }
+  }
+  .details{
+    margin: 1.8rem 0;
+    h3{
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      font-family: Montserrat;
+      font-weight: 500;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #000000;
+    }
+    p{
+      font-size: 1rem;
+      font-family: "Open Sans";
+      font-weight: 300;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.5;
+      letter-spacing: normal;
+      color: #000000;
+      white-space: pre-line;
+
+    }
+    @media (max-width: 768px) {
+      margin: 1rem 0;
+    }
+  }
+  img {
+    margin-top: 4rem;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    object-position: center;
+  }
+  .MainButton {
+    border:1px solid rgba(1, 172, 242, 0) !important;
+    width: fit-content;
+    padding: .8rem 2rem;
+    background-image: linear-gradient(90deg, #02D6FA 0%, #01ACF2 100%) !important;
+    transition: .3s;
+    &:hover {
+      border:1px solid #01ACF2 !important;
+      background: none !important;
+      p {
+        color: #01ACF2;
+      }
+    }
+    p {
+      color: #fff;
+    }
+    @media (max-width: 768px) {
+      width: 100%;
+      p {
+        font-size: 1rem;
+        padding: .5rem 0;
+      }
+    }
+  }
+  @media (max-width: 768px) {
+    img {
+      margin-top: 0;
+    }
+  }
+}

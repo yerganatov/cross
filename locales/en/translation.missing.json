@@ -1,0 +1,67 @@
+{
+  "mainPage": {
+    "firstPart": {
+      "companyName": "mainPage.firstPart.companyName",
+      "companyNameSub": "mainPage.firstPart.companyNameSub",
+      "companyInfo": {
+        "first": "mainPage.firstPart.companyInfo.first",
+        "second": "mainPage.firstPart.companyInfo.second",
+        "third": "mainPage.firstPart.companyInfo.third"
+      }
+    },
+    "ourMission": {
+      "title": "mainPage.ourMission.title",
+      "description": "mainPage.ourMission.description",
+      "descriptionInside": "mainPage.ourMission.descriptionInside"
+    },
+    "ourServices": {
+      "title": "mainPage.ourServices.title",
+      "subTitle": "mainPage.ourServices.subTitle"
+    },
+    "ourPartners": {
+      "subTitle": "mainPage.ourPartners.subTitle",
+      "title": "mainPage.ourPartners.title"
+    },
+    "ourWorks": {
+      "subTitle": "mainPage.ourWorks.subTitle",
+      "title": "mainPage.ourWorks.title",
+      "seeMore": "mainPage.ourWorks.seeMore",
+      "seeMoreMobile": "mainPage.ourWorks.seeMoreMobile"
+    },
+    "ourCatalog": {
+      "subTitle": "mainPage.ourCatalog.subTitle",
+      "title": "mainPage.ourCatalog.title",
+      "description": "mainPage.ourCatalog.description",
+      "seeMore": "mainPage.ourCatalog.seeMore",
+      "seeMoreMobile": "mainPage.ourCatalog.seeMoreMobile"
+    },
+    "ourTeam": {
+      "subTitle": "mainPage.ourTeam.subTitle",
+      "title": "mainPage.ourTeam.title"
+    },
+    "ourContacts": {
+      "subTitle": "mainPage.ourContacts.subTitle",
+      "title": "mainPage.ourContacts.title",
+      "description": "mainPage.ourContacts.description",
+      "placeholderName": "mainPage.ourContacts.placeholderName",
+      "placeholderPhone": "mainPage.ourContacts.placeholderPhone",
+      "button": "mainPage.ourContacts.button",
+      "address": "mainPage.ourContacts.address"
+    }
+  },
+  "navigation": {
+    "services": "navigation.services",
+    "works": "navigation.works",
+    "catalogs": "navigation.catalogs",
+    "influensers": "navigation.influensers",
+    "team": "navigation.team",
+    "contacts": "navigation.contacts",
+    "address": "navigation.address"
+  },
+  "formModal": {
+    "typeInformation": "formModal.typeInformation",
+    "name": "formModal.name",
+    "phone": "formModal.phone",
+    "button": "formModal.button"
+  }
+}

@@ -1,0 +1,66 @@
+.ProjectCard {
+  position: relative;
+  transition: .5s;
+  transition-delay: .2s;
+  border-radius: 5px;
+  width: 100%;
+  padding-top: 62.5%;
+  p {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    left: .5rem;
+    color: #fff;
+    width: 60%;
+    font-family: Montserrat;
+    font-weight: bold;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+  }
+  img {
+    position: absolute;
+    border-radius: 5px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .image-project {
+    filter: grayscale(100%);
+  }
+  .hover-info {
+    position: relative;
+    border-radius: 5px;
+    img {
+      position: absolute;
+      top: 0;
+      left: auto;
+      right: 0 !important;
+      height: 100%;
+      width: auto !important;
+      padding-top: 5%;
+      padding-bottom: 5%;
+      opacity: 1;
+    }
+    z-index: 2;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(90deg, #026FCF 0%, #02C9C4 100%);
+  }
+  &:hover {
+    .hover-info {
+      transition: .5s;
+      opacity: 1;
+      mix-blend-mode: hard-light;
+    }
+  }
+}

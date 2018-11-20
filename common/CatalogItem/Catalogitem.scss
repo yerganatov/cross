@@ -1,0 +1,58 @@
+.CatalogItem {
+  margin-bottom: 3rem;
+  transition: .5s;
+  @media (max-width: 798px) {
+    margin-bottom: 2rem;
+  }
+  img{
+    width: 100%;
+    height: 19rem;
+    object-fit: cover;
+    object-position: center;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    @media (max-width: 798px) {
+      height: 12rem;
+    }
+  }
+  .title {
+    transition: .5s;
+    font-family: Montserrat;
+    font-size: 1rem !important;
+    font-weight: 500 !important;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5rem;
+    letter-spacing: normal;
+    color: #000000;
+    margin-bottom: .5rem !important;
+  }
+  .date {
+    font-family: "Open Sans";
+    font-size: 1rem;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #707070;
+  }
+  a {
+    color: #01ACF2;
+    -webkit-transition: .5s;
+    transition: .5s;
+    font-family: Montserrat;
+    text-decoration: none;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+  }
+  a:hover {
+    .title {
+      color: #01ACF2;
+    }
+  }
+}

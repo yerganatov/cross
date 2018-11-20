@@ -1,0 +1,105 @@
+{
+  "mainPage":{
+    "firstPart":{
+      "companyName":"CROSS",
+      "companyNameSub":"Communication agency",
+      "companyInfo":{
+        "first":"We get a measurable ROI result",
+        "second":"Guided by the tangible goal of the client ",
+        "third":"Creativity, nativeness, cross- and co-marketing"
+      }
+    },
+    "ourMission":{
+      "title":"Our mission",
+      "description":"Our mission ",
+      "descriptionInside":"- is to link big brands together with communication and creativity. Creating cross marketing links to achieve maximum commercial effect in product promotion."
+    },
+    "ourServices":{
+      "title":"Our services",
+      "subTitle":"SERVICES",
+      "strategyTitle":"Strategy and Analytics",
+      "strategyDescription":"Sponsorship potential assessment, development of an event fundraising strategy",
+      "projectPackingTitle":"Project Packing",
+      "projectPackingDescription":"Development of professional materials for working with partners and sponsors",
+      "fundraisingTitle":"Fundraising",
+      "fundraisingDescription":"Attracting resources to the event, monitoring implementation, reporting",
+      "projectManagementTitle":"Project management",
+      "projectManagementDescription":"Organize, control and represent the interests of the sponsor at all levels",
+      "reportingTitle":"Accounting",
+      "reportingDescription":"Preparation of content report and financial report for sponsors"
+    },
+    "ourPartners":{
+      "title":"Our partners",
+      "subTitle":"PARTNERS"
+    },
+    "ourWorks":{
+      "title":"Last works",
+      "subTitle":"CASES",
+      "seeMore":"See more ",
+      "seeMoreMobile":"More "
+    },
+    "ourCatalog":{
+      "title":"Catalog",
+      "subTitle":"CATALOG",
+      "description":"Here you can find open projects for which we are actively attracting partners.",
+      "seeMore":"See more ",
+      "seeMoreMobile":"More "
+    },
+    "ourTeam":{
+      "title":"Our team",
+      "subTitle":"TEAM",
+      "memberName1":"Aydar Parzhanov",
+      "memberPosition1":"Director",
+      "memberName2":"Raimbek Iskendirov",
+      "memberPosition2":"Director of Development",
+      "memberName3":"Ruslan Sheriazdan",
+      "memberPosition3":"Marketer",
+      "memberName4":"Alexandra Hotinskaya",
+      "memberPosition4":"Project Manager"
+    },
+    "ourContacts":{
+      "title":"To contact us",
+      "subTitle":"CONTACTS",
+      "description":"Want to discuss cooperation with us? \n Leave a request and we will call you back.",
+      "placeholderName":"Your name",
+      "placeholderPhone":"Phone number",
+      "address":"Almaty, st. Bayzakova 280, SmArt.Point",
+      "button":"Submit"
+    }
+  },
+  "navigation":{
+    "services":"Our services",
+    "works":"Last works",
+    "catalogs":"Catalogs",
+    "influensers":"Infusers",
+    "team":"Team",
+    "contacts":"To contact us",
+    "address":"Almaty, st. Bayzakova 280"
+  },
+  "catalog":{
+    "title":"Catalog",
+    "subTitle":"CATALOG",
+    "description":"projects for which we are actively attracting partners"
+  },
+  "detailedProject":{
+    "project":"Project",
+    "aboutClient":"About client",
+    "task":"Task",
+    "work":"Work done",
+    "result":"results"
+  },
+  "detailedCatalog":{
+    "catalog":"Catalog",
+    "aboutCatalog":"About the  project",
+    "requestPartners":"Requirements for partners",
+    "button":"Submit"
+  },
+  "formModal":{
+    "typeInformation":"Enter data",
+    "name":"Your name",
+    "phone":"Phone number",
+    "button":"Submit"
+  },
+  "date":"Date: "
+
+}

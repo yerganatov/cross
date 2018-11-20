@@ -1,0 +1,105 @@
+{
+    "mainPage":{
+        "firstPart":{
+            "companyName":"CROSS",
+            "companyNameSub":"Коммуникационное агенство",
+            "companyInfo":{
+                "first":"Получаем измеримый результат ROI",
+                "second":"Руководствуемся ощутимой целью клиента ",
+                "third":"Креативность, нативность, cross- и co- маркетинг"
+            }
+        },
+        "ourMission":{
+            "title":"Наша миссия",
+            "description":"Наша миссия ",
+            "descriptionInside":" – за счет коммуникаций  и креатива связывать между собой крупные бренды. Создавая cross маркетинговые связи добиваться максимального коммерческого эффекта в продвижении продукта."
+        },
+        "ourServices":{
+            "title":"Наши услуги",
+            "subTitle":"УСЛУГИ",
+            "strategyTitle":"Стратегия и аналитика",
+            "strategyDescription":"Оценка спонсорского потенциала, разработка фандрайзинговой стратегии события",
+            "projectPackingTitle":"Упаковка проектов",
+            "projectPackingDescription":"Разработка профессиональных материалов для работы  с партнерами и спонсорами",
+            "fundraisingTitle":"Фандрайзинг",
+            "fundraisingDescription":"Привлечение ресурсов на событие, контроль реализации, составление отчетности",
+            "projectManagementTitle":"Менеджмент проекта",
+            "projectManagementDescription":"Организация, контроль и представление интересов спонсора на всех уровнях",
+            "reportingTitle":"Отчетность",
+            "reportingDescription":"Подготовка контент-отчета и финансового отчета для спонсоров"
+        },
+        "ourPartners":{
+            "title":"Наши партнеры",
+            "subTitle":"ПАРТНЕРЫ"
+        },
+        "ourWorks":{
+            "title":"Последние работы",
+            "subTitle":"КЕЙСЫ",
+            "seeMore":"Смотреть все ",
+            "seeMoreMobile":"Все "
+        },
+        "ourCatalog":{
+            "title":"Каталог",
+            "subTitle":"КАТАЛОГ",
+            "description":"Здесь вы можете найти открытые проекты, на которые мы активно привлекаем партнеров",
+            "seeMore":"Смотреть все ",
+            "seeMoreMobile":"Все "
+        },
+        "ourTeam":{
+            "title":"Наша команда",
+            "subTitle":"КОМАНДА",
+            "memberName1":"Айдар Паржанов",
+            "memberPosition1":"Директор",
+            "memberName2":"Раимбек Искендиров",
+            "memberPosition2":"Директор по развитию",
+            "memberName3":"Руслан Шерияздан",
+            "memberPosition3":"Маркетолог",
+            "memberName4":"Александра Хотинская",
+            "memberPosition4":"Проджект менеджер"
+        },
+        "ourContacts":{
+            "title":"Связаться с нами",
+            "subTitle":"КОНТАКТЫ",
+            "description":"Хотите обсудить сотрудничество с нами? \n  Оставьте заявку и мы вам обязательно перезвоним.",
+            "placeholderName":"Ваше имя",
+            "placeholderPhone":"Номер телефона",
+            "address":"Алматы, ул. Байзакова 280, SmArt.Point",
+            "button":"Оставить заявку"
+        }
+    },
+    "navigation":{
+        "services":"Наши услуги",
+        "works":"Последние работы",
+        "catalogs":"Каталоги",
+        "influensers":"Инфлуенсеры",
+        "team":"Команда",
+        "contacts":"Связаться с нами",
+        "address":"Алматы, ул. Байзакова 280"
+    },
+    "catalog":{
+        "title":"Каталог",
+        "subTitle":"КАТАЛОГ",
+        "description":"проектов на которые мы активно привлекаем партнеров"
+    },
+    "detailedProject":{
+        "project":"Проект",
+        "aboutClient":"О клиенте",
+        "task":"Задача",
+        "work":"Проделанная работа",
+        "result":"Результаты"
+    },
+    "detailedCatalog":{
+        "catalog":"Каталог",
+        "aboutCatalog":"О проекте",
+        "requestPartners":"Требования к партнерам",
+        "button":"Оставить заявку"
+    },
+    "formModal":{
+        "typeInformation":"Введите данные",
+        "name":"Ваше имя",
+        "phone":"Номер телефона",
+        "button":"Оставить заявку"
+    },
+    "date":"Дата: "
+
+}

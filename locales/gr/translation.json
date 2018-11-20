@@ -1,0 +1,105 @@
+{
+  "mainPage":{
+    "firstPart":{
+      "companyName":"CROSS",
+      "companyNameSub":"Kommunikationsagentur",
+      "companyInfo":{
+        "first":"Wir erhalten ein messbares ROI-Ergebnis",
+        "second":"Geleitet vom konkreten Ziel des Kunden ",
+        "third":"Kreativität, Ursprünglichkeit, Cross- und Co-Marketing"
+      }
+    },
+    "ourMission":{
+      "title":"Unsere Mission",
+      "description":"Unsere Mission ",
+      "descriptionInside":" – ist es, große Marken mit Kommunikation und Kreativität zu verbinden. Cross-Marketing-Links schaffen, um die maximale kommerzielle Wirkung in der Produktwerbung zu erzielen"
+    },
+    "ourServices":{
+      "title":"Unsere Dienstleistungen",
+      "subTitle":"DIENSTLEISTUNGEN",
+      "strategyTitle":"Strategie und Analytik",
+      "strategyDescription":"Bewertung des Sponsoringpotentials, Entwicklung einer Strategie für das Fundraising von Veranstaltungen",
+      "projectPackingTitle":"Projektverpackung",
+      "projectPackingDescription":"Entwicklung professioneller Materialien für die Zusammenarbeit mit Partnern und Sponsoren",
+      "fundraisingTitle":"Fundraising",
+      "fundraisingDescription":"Ressourcen für die Veranstaltung gewinnen, Implementierung überwachen, Berichterstellung",
+      "projectManagementTitle":"Projektmanagement",
+      "projectManagementDescription":"Organisieren, kontrollieren und vertreten Sie die Interessen des Sponsors auf allen Ebenen",
+      "reportingTitle":"Berichterstattung",
+      "reportingDescription":"Erstellung des Inhaltsberichts und des Finanzberichts für Sponsoren"
+    },
+    "ourPartners":{
+      "title":"Unsere Partner",
+      "subTitle":"PARTNER"
+    },
+    "ourWorks":{
+      "title":"Jüngste Arbeit",
+      "subTitle":"FÄLLE",
+      "seeMore":"Alles sehen ",
+      "seeMoreMobile":"alle "
+    },
+    "ourCatalog":{
+      "title":"Katalog",
+      "subTitle":"KATALOG",
+      "description":"Hier finden Sie offene Projekte, für die wir aktiv Partner gewinnen.",
+      "seeMore":"Alles sehen ",
+      "seeMoreMobile":"alle "
+    },
+    "ourTeam":{
+      "title":"Unser Team",
+      "subTitle":"TEAM",
+      "memberName1":"Aydar Parzhanov",
+      "memberPosition1":"Direktor",
+      "memberName2":"Raimbek Iskendirov",
+      "memberPosition2":"Director of Development",
+      "memberName3":"Ruslan Sheriazdan",
+      "memberPosition3":"Marketer",
+      "memberName4":"Alexandra Hotinskaya",
+      "memberPosition4":"Projektleiter"
+    },
+    "ourContacts":{
+      "title":"Kontaktieren Sie uns",
+      "subTitle":"KONTAKT",
+      "description":"Möchten Sie die Zusammenarbeit mit uns besprechen? \n Hinterlassen Sie eine Anfrage und wir rufen Sie zurück.",
+      "placeholderName":"Ihr Name",
+      "placeholderPhone":"Telefonnummer",
+      "address":"Almaty, st. Bayzakova 280, SmArt.Point",
+      "button":"Hinterlassen Sie eine Anfrage"
+    }
+  },
+  "navigation":{
+    "services":"Unsere Dienstleistungen",
+    "works":"Jüngste Arbeit",
+    "catalogs":"Kataloge",
+    "influensers":"Infusoren",
+    "team":"Team",
+    "contacts":"Kontaktieren Sie uns",
+    "address":"Almaty, st. Bayzakova 280"
+  },
+  "catalog":{
+    "title":"Katalog",
+    "subTitle":"KATALOG",
+    "description":"Projekte, für die wir aktiv Partner gewinnen"
+  },
+  "detailedProject":{
+    "project":"Projekt",
+    "aboutClient":"Über den Kunden",
+    "task":"Aufgabe",
+    "work":"Arbeit erledigt",
+    "result":"Ergebnisse"
+  },
+  "detailedCatalog":{
+    "catalog":"Katalog",
+    "aboutCatalog":"Über den Projekt",
+    "requestPartners":"Anforderungen an die Partner",
+    "button":"Hinterlassen Sie eine Anfrage"
+  },
+  "formModal":{
+    "typeInformation":"Daten eingeben",
+    "name":"Ihr Name",
+    "phone":"Telefonnummer",
+    "button":"Hinterlassen Sie eine Anfrage"
+  },
+  "date":"Datum: "
+
+}
