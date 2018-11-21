@@ -1,4 +1,11 @@
 {
+    "titles": {
+        "mainPage":"CROSS | Главная страница",
+        "projectList":"CROSS | Список проектов",
+        "catalogList":"CROSS | Каталог",
+        "catalogItem":"CROSS | ",
+        "projectItem":"CROSS | "
+    },
     "mainPage":{
         "firstPart":{
             "companyName":"CROSS",
@@ -79,7 +86,8 @@
     "catalog":{
         "title":"Каталог",
         "subTitle":"КАТАЛОГ",
-        "description":"проектов на которые мы активно привлекаем партнеров"
+        "description":"на которые мы активно привлекаем партнеров",
+        "descriptionSpan":" проектов"
     },
     "detailedProject":{
         "project":"Проект",
@@ -100,6 +108,6 @@
         "phone":"Номер телефона",
         "button":"Оставить заявку"
     },
-    "date":"Дата: "
-
+    "date":"Дата: ",
+    "localeLang":"ru"
 }

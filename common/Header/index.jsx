@@ -35,6 +35,11 @@ class Header extends Component {
         i18n.changeLanguage(lng);
     }
 
+    closeModalChangeLang = (lng) => {
+        this.changeLanguage(lng);
+        this.hrefClicked();
+    }
+
     render() {
         const { t, i18n } = this.props;
         const { bgColor, textColor } = this.props;
@@ -80,15 +85,15 @@ class Header extends Component {
                             <a style={{color:textColor}}  href="tel:+77751534575">+ 7 (775) 153-45-75</a>
                             <a style={{color:textColor}}  href="mailto:contacts@press.kz">contacts@press.kz</a>
                             <div className="d-flex">
-                                <a style={{color:textColor}} onClick={() => this.changeLanguage("ru-RU")}>
+                                <a style={{color:textColor}} onClick={() => this.closeModalChangeLang("ru-RU")}>
                                     RU
                                 </a>
                                 <span className="mx-2"> / </span>
-                                <a style={{color:textColor}} onClick={() => this.changeLanguage("en")}>
+                                <a style={{color:textColor}} onClick={() => this.closeModalChangeLang("en")}>
                                     EN
                                 </a>
                                 <span className="mx-2"> / </span>
-                                <a style={{color:textColor}} onClick={() => this.changeLanguage("gr")}>
+                                <a style={{color:textColor}} onClick={() => this.closeModalChangeLang("gr")}>
                                     GR
                                 </a>
                             </div>

@@ -1,4 +1,11 @@
 {
+  "titles": {
+    "mainPage":"CROSS | Main page",
+    "projectList":"CROSS | Project list",
+    "catalogList":"CROSS | Catalog",
+    "catalogItem":"CROSS | ",
+    "projectItem":"CROSS | "
+  },
   "mainPage":{
     "firstPart":{
       "companyName":"CROSS",
@@ -79,7 +86,8 @@
   "catalog":{
     "title":"Catalog",
     "subTitle":"CATALOG",
-    "description":"projects for which we are actively attracting partners"
+    "description":"for which we are actively attracting partners",
+    "descriptionSpan":" projects"
   },
   "detailedProject":{
     "project":"Project",
@@ -100,6 +108,7 @@
     "phone":"Phone number",
     "button":"Submit"
   },
-  "date":"Date: "
+  "date":"Date: ",
+  "localeLang":"en-gb"
 
 }

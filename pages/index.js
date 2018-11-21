@@ -1,28 +1,30 @@
 import React from 'react';
 import Head from 'next/head'
-import { withI18next } from '../lib/withI18next'
+import {withI18next} from '../lib/withI18next'
 
-import { Map, Marker, MarkerLayout } from 'yandex-map-react';
+import {Map, Marker, MarkerLayout} from 'yandex-map-react';
 
 import {Header, Footer, ProjectCard, CatalogItem, Preloader, OrderModal} from "../common";
 import firebase from "../api/firebase";
+
 const db = firebase.firestore();
 import "./home.scss";
 
 
 class Index extends React.Component {
+
     state = {
         projects: [],
         catalog: [],
-        team:[],
-        services:[],
-        partners:[],
-        createOrder:false,
-        loading:true,
-        lng:""
+        team: [],
+        services: [],
+        partners: [],
+        createOrder: false,
+        loading: true,
+        lng: ""
     }
 
-    async componentDidMount()  {
+    async componentDidMount() {
         const {lng} = this.props;
         this.fetchCatalog();
         this.fetchTeam();
@@ -31,13 +33,13 @@ class Index extends React.Component {
         await this.fetchProjects();
         console.log(this.props);
         this.setState({
-            loading:false,
+            loading: false,
             lng
         })
     }
 
 
-    fetchTeam = async () =>{
+    fetchTeam = async () => {
         try {
             const snapshots = await db.collection('team').get();
             let problems = [];
@@ -46,7 +48,7 @@ class Index extends React.Component {
                 problems.push(data);
             });
             let projects = problems.slice(0, 4);
-            projects.sort((a,b) =>{
+            projects.sort((a, b) => {
                 return a.id - b.id;
             })
             await this.setState({team: [...projects]});
@@ -118,25 +120,42 @@ class Index extends React.Component {
     };
 
 
-    createOrder = () =>{
+    createOrder = () => {
         this.setState({
-            createOrder:!this.state.createOrder
+            createOrder: !this.state.createOrder
         })
     };
 
-    isActive = () =>{
-        return "modalViewWrap " + ((this.state.createOrder === true) ? "opened": "")
+    isActive = () => {
+        return "modalViewWrap " + ((this.state.createOrder === true) ? "opened" : "")
     }
 
     render() {
-        const {t,  i18n, lng} = this.props;
+        const {t, i18n, lng} = this.props;
 
 
         return (
             <div className="Home d-flex flex-column">
                 <Head>
-                    <title>My page title</title>
-                    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+                    <title>{t("titles.mainPage")}</title>
+                    <link rel="apple-touch-icon" sizes="57x57" href="/static/apple-icon-57x57.png"/>
+                    <link rel="apple-touch-icon" sizes="60x60" href="/static/apple-icon-60x60.png"/>
+                    <link rel="apple-touch-icon" sizes="72x72" href="/static/apple-icon-72x72.png"/>
+                    <link rel="apple-touch-icon" sizes="76x76" href="/static/apple-icon-76x76.png"/>
+                    <link rel="apple-touch-icon" sizes="114x114" href="/static/apple-icon-114x114.png"/>
+                    <link rel="apple-touch-icon" sizes="120x120" href="/static/apple-icon-120x120.png"/>
+                    <link rel="apple-touch-icon" sizes="144x144" href="/static/apple-icon-144x144.png"/>
+                    <link rel="apple-touch-icon" sizes="152x152" href="/static/apple-icon-152x152.png"/>
+                    <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-icon-180x180.png"/>
+                    <link rel="icon" type="image/png" sizes="192x192" href="/static/android-icon-192x192.png"/>
+                    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png"/>
+                    <link rel="icon" type="image/png" sizes="96x96" href="/static/favicon-96x96.png"/>
+                    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png"/>
+                    <link rel="manifest" href="/static/manifest.json"/>
+                    <meta name="msapplication-TileColor" content="#ffffff"/>
+                    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png"/>
+                    <meta name="theme-color" content="#ffffff"/>
+                    <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
                 </Head>
                 {this.state.loading && <Preloader></Preloader>}
                 <div className="lines-cover row mx-0 d-none d-md-flex">
@@ -149,11 +168,11 @@ class Index extends React.Component {
                     </div>
                     <div className="col-3"></div>
                 </div>
-                <Header bgColor={"#000"}/>
+                <Header setRef={(ref) => this.refnav  = ref} bgColor={"#000"}/>
                 <div className={this.isActive()}>
                     <OrderModal closeModal={this.createOrder}/>
                 </div>
-                <div className="landing d-flex flex-column w-100">
+                <div  className="landing d-flex flex-column w-100">
 
                     <div className="main-card-info d-flex row m-0 align-items-center">
                         <div className="col-0 col-md-3 p-0 m-0"></div>
@@ -184,13 +203,13 @@ class Index extends React.Component {
                         <div className="col-0 col-md-3"></div>
                     </div>
 
-                    <section  id="services" style={{paddingTop: "-10rem"}}></section >
+                    <section id="services" style={{paddingTop: "-10rem"}}></section>
                     <div className="our-services d-flex">
                         <div className="white-box d-flex flex-column p-2 p-md-5">
                             <h3 className="mb-5">{t("mainPage.ourServices.title")}</h3>
                             <div className="services row mx-0">
                                 {
-                                    this.state.services.map((item) =>{
+                                    this.state.services.map((item) => {
                                         let data;
                                         switch (lng) {
                                             case "ru-RU": {
@@ -210,7 +229,7 @@ class Index extends React.Component {
                                             }
 
                                         }
-                                        return(
+                                        return (
                                             <div className="col-12 col-md-4 p-0 pr-4 mb-4 mb-md-5">
                                                 <h4>{data.title}</h4>
                                                 <p className="mb-0">{data.description}</p>
@@ -218,7 +237,6 @@ class Index extends React.Component {
                                         )
                                     })
                                 }
-
 
 
                             </div>
@@ -234,7 +252,7 @@ class Index extends React.Component {
                         <div className="row mx-0 w-100 justify-content-md-center align-items-center">
                             {
                                 this.state.partners.map((item) => {
-                                    return(
+                                    return (
                                         <a className="image-wrap" href={item.ru.title} target="_blank">
                                             <img src={item.image} alt=""/>
                                         </a>
@@ -278,7 +296,7 @@ class Index extends React.Component {
                                 }
                                 return (
                                     <div className="col-md-6 col-12 p-3">
-                                        <ProjectCard image ={item.images[0]} id={item.id} item={data}/>
+                                        <ProjectCard image={item.images[0]} id={item.id} item={data}/>
                                     </div>
                                 )
                             })}
@@ -331,11 +349,11 @@ class Index extends React.Component {
                                 return (
 
                                     <div className="col-md-3 col-6">
-                                        <CatalogItem image={item.image} onPress={this.createOrder} id={item.id} item={data} date={item.date}/>
+                                        <CatalogItem image={item.image} onPress={this.createOrder} id={item.id}
+                                                     item={data} date={item.date}/>
                                     </div>
                                 )
                             })}
-
 
 
                         </div>
@@ -371,7 +389,8 @@ class Index extends React.Component {
                                     }
                                     return (
 
-                                        <div className="col-12 col-md-3 align-items-center d-flex flex-column mb-5 mb-md-0">
+                                        <div
+                                            className="col-12 col-md-3 align-items-center d-flex flex-column mb-5 mb-md-0">
                                             <img src={item.image} alt=""/>
                                             <h4>{data.name}</h4>
                                             <p>{data.workType}</p>
@@ -407,8 +426,9 @@ class Index extends React.Component {
                                 <p><span><a href="mailto:contacts@press.kz">contacts@press.kz</a></span>, <span><a
                                     href="tel:+77751534575">+ 7 (775) 153-45-75</a></span>
                                     <br/> {t("mainPage.ourContacts.address")}</p>
-                                <Map width={"100%"} height={"20rem"} borderRadius={3} id="map" center={[43.2368614,76.9154467]} zoom={16}>
-                                    <Marker lat={43.2368614} lon={76.9154467} />
+                                <Map width={"100%"} height={"20rem"} borderRadius={3} id="map"
+                                     onAPIAvailable={function () { console.log('API loaded'); }} center={[43.2368614, 76.9154467]} zoom={16}>
+                                    <Marker lat={43.2368614} lon={76.9154467}/>
                                 </Map>
                             </div>
                             <div className="col-md-2 col-12"></div>
