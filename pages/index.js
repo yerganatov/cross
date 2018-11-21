@@ -47,7 +47,7 @@ class Index extends React.Component {
                 const data = s.data();
                 problems.push(data);
             });
-            let projects = problems.slice(0, 4);
+            let projects = problems;
             projects.sort((a, b) => {
                 return a.id - b.id;
             })
@@ -97,7 +97,7 @@ class Index extends React.Component {
                 problems.push(data);
             });
 
-            let projects = problems.slice(0, 6);
+            let projects = problems;
             await this.setState({services: [...projects]});
         } catch (error) {
             alert(error.message);
@@ -112,7 +112,7 @@ class Index extends React.Component {
                 data["id"] = s.id;
                 problems.push(data);
             });
-            let projects = problems.slice(0, 6);
+            let projects = problems;
             await this.setState({partners: [...projects]});
         } catch (error) {
             alert(error.message);
@@ -390,7 +390,7 @@ class Index extends React.Component {
                                     return (
 
                                         <div
-                                            className="col-12 col-md-3 align-items-center d-flex flex-column mb-5 mb-md-0">
+                                            className="col-12 col-md-3 align-items-center d-flex flex-column mb-5 mb-md-4">
                                             <img src={item.image} alt=""/>
                                             <h4>{data.name}</h4>
                                             <p>{data.workType}</p>
