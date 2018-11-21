@@ -40,7 +40,7 @@ class detailedProject extends Component {
             },
             loading: true,
             img:"",
-            id:""
+            id:"",
         }
     }
     static async getInitialProps({query}) {
@@ -59,9 +59,10 @@ class detailedProject extends Component {
         try {
             const snapshot = await db.collection('projects').doc(this.props.url).get();
             let project = snapshot.data();
+            console.log(project);
             this.setState({
                 project,
-                img:project.images[0]
+                img:project.images[0],
 
             })
         }
@@ -151,7 +152,7 @@ class detailedProject extends Component {
                                 data.tags.map((item, index) => {
                                     console.log(item)
                                     return (
-                                        <p className="tag" key={index}>{item}</p>
+                                        <p className="tag" key={index}>{item.text}</p>
                                     )
                                 })
                             }
