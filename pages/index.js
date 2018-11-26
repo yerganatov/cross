@@ -272,7 +272,6 @@ class Index extends React.Component {
 
                                         }
                                         if (item.gr.title !== "") {
-                                            console.log(item)
                                             return (
                                                 <div className="col-12 col-md-4 p-0 pr-4 mb-4 mb-md-5">
                                                     <h4>{data.title}</h4>
