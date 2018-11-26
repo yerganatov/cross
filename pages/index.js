@@ -21,7 +21,8 @@ class Index extends React.Component {
         partners: [],
         createOrder: false,
         loading: true,
-        lng: ""
+        lng: "",
+        headerOpen:false
     }
 
     async componentDidMount() {
@@ -67,6 +68,8 @@ class Index extends React.Component {
                 problems.push(data);
             });
             let projects = problems.slice(0, 4);
+            console.log(projects)
+            console.log(this.props.lng)
             await this.setState({projects: [...projects]});
         } catch (error) {
             alert(error.message);
@@ -130,6 +133,18 @@ class Index extends React.Component {
         return "modalViewWrap " + ((this.state.createOrder === true) ? "opened" : "")
     }
 
+    closeHeader = () =>{
+        this.setState({
+            headerOpen:false
+        })
+    }
+    toggleHeader = () =>{
+        this.setState({
+            headerOpen:!this.state.headerOpen
+        })
+    }
+
+
     render() {
         const {t, i18n, lng} = this.props;
 
@@ -168,11 +183,11 @@ class Index extends React.Component {
                     </div>
                     <div className="col-3"></div>
                 </div>
-                <Header setRef={(ref) => this.refnav  = ref} bgColor={"#000"}/>
+                <Header opened={this.state.headerOpen} toggleHeader={this.toggleHeader} bgColor={"#000"}/>
                 <div className={this.isActive()}>
                     <OrderModal closeModal={this.createOrder}/>
                 </div>
-                <div  className="landing d-flex flex-column w-100">
+                <div onClick={this.closeHeader}   className="landing d-flex flex-column w-100">
 
                     <div className="main-card-info d-flex row m-0 align-items-center">
                         <div className="col-0 col-md-3 p-0 m-0"></div>
@@ -229,12 +244,15 @@ class Index extends React.Component {
                                             }
 
                                         }
-                                        return (
-                                            <div className="col-12 col-md-4 p-0 pr-4 mb-4 mb-md-5">
-                                                <h4>{data.title}</h4>
-                                                <p className="mb-0">{data.description}</p>
-                                            </div>
-                                        )
+                                        if(item.gr.title !== "") {
+                                            console.log(item)
+                                            return (
+                                                <div className="col-12 col-md-4 p-0 pr-4 mb-4 mb-md-5">
+                                                    <h4>{data.title}</h4>
+                                                    <p className="mb-0">{data.description}</p>
+                                                </div>
+                                            )
+                                        }
                                     })
                                 }
 

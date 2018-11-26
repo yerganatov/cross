@@ -41,6 +41,8 @@ class detailedProject extends Component {
             loading: true,
             img:"",
             id:"",
+            headerOpen:false
+
         }
     }
     static async getInitialProps({query}) {
@@ -70,6 +72,18 @@ class detailedProject extends Component {
             alert(error.message);
         }
     };
+
+    closeHeader = () =>{
+        this.setState({
+            headerOpen:false
+        })
+    }
+    toggleHeader = () =>{
+        this.setState({
+            headerOpen:!this.state.headerOpen
+        })
+    }
+
 
 
     render() {
@@ -141,7 +155,8 @@ class detailedProject extends Component {
                     <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
                 </Head>
                 {this.state.loading && <Preloader></Preloader>}
-                <Header bgColor="#000"/>
+                <Header opened={this.state.headerOpen} toggleHeader={this.toggleHeader} bgColor={"#000"}/>
+
                 <div className="landing">
                     <div className="col-md-6 col-12 px-0">
                         <span className="sub-title">{t("detailedProject.project")}</span>

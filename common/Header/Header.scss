@@ -63,7 +63,22 @@
     label:hover {
       cursor: pointer;
     }
-    input:checked + label {
+    //input:checked + label {
+    //  span {
+    //    background-color: black;
+    //    opacity: 0;
+    //    top: 50%;
+    //  }
+    //  span:first-child {
+    //    opacity: 1;
+    //    transform: rotate(405deg);
+    //  }
+    //  span:last-child {
+    //    opacity: 1;
+    //    transform: rotate(-405deg);
+    //  }
+    //}
+    input.opened + label {
       span {
         background-color: black;
         opacity: 0;
@@ -132,7 +147,7 @@
         }
       }
     }
-    input:checked ~ nav {
+    .opened {
       display: flex;
       background-color: #fff;
       height: 18rem;
@@ -142,6 +157,7 @@
         height: 100%;
       }
     }
+
   @media (max-width: 768px) {
     min-height: 10vh;
   }

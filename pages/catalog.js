@@ -10,7 +10,8 @@ const db = firebase.firestore();
 class Catalog extends Component{
     state ={
         catalog: [],
-        loading:true
+        loading:true,
+        headerOpen:false
     }
 
     async componentDidMount(){
@@ -36,6 +37,16 @@ class Catalog extends Component{
             alert(error.message);
         }
     };
+    closeHeader = () =>{
+        this.setState({
+            headerOpen:false
+        })
+    }
+    toggleHeader = () =>{
+        this.setState({
+            headerOpen:!this.state.headerOpen
+        })
+    }
 
     render(){
         const { t, i18n, lng } = this.props;
@@ -63,7 +74,7 @@ class Catalog extends Component{
                     <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
                 </Head>
                 {this.state.loading && <Preloader></Preloader>}
-                <Header bgColor="#fff" textColor="#000"/>
+                <Header opened={this.state.headerOpen} toggleHeader={this.toggleHeader} bgColor={"#000"}/>
                 <div className="main-article w-100 d-flex flex-column align-items-center">
                     <h2>{t("catalog.subTitle")}</h2>
                     <h3 className="title">{t("catalog.title")}</h3>

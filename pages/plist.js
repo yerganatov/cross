@@ -11,7 +11,9 @@ import "./ProjectList.scss";
 class plist extends Component {
     state={
         projects:[],
-        loading: true
+        loading: true,
+        headerOpen:false
+
     }
     async componentDidMount(){
         await this.fetchProjects();
@@ -34,6 +36,18 @@ class plist extends Component {
             alert(error.message);
         }
     };
+
+    closeHeader = () =>{
+        this.setState({
+            headerOpen:false
+        })
+    }
+    toggleHeader = () =>{
+        this.setState({
+            headerOpen:!this.state.headerOpen
+        })
+    }
+
     render(){
         const { t, i18n, lng} = this.props;
         return(
@@ -61,7 +75,8 @@ class plist extends Component {
                     <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
                 </Head>
                 {this.state.loading && <Preloader></Preloader>}
-                <Header bgColor={"#000"}/>
+                <Header opened={this.state.headerOpen} toggleHeader={this.toggleHeader} bgColor={"#000"}/>
+
                 <div className="info-project-list d-flex flex-column align-items-center">
                     <h2 className="text-md-center text-left">{t("mainPage.ourWorks.subTitle")}</h2>
                     <h3 className="text-md-center text-left">{t("mainPage.ourWorks.title")}</h3>

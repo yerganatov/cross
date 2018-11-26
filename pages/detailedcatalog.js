@@ -27,7 +27,9 @@ class Detailedcatalog extends Component {
                 requestPartners:""
             }
         },
-        loading:true
+        loading:true,
+        headerOpen:false
+
     };
     static async getInitialProps({query}) {
         return{url : query.id}
@@ -62,6 +64,18 @@ class Detailedcatalog extends Component {
     isActive = () =>{
         return "modalViewWrap " + ((this.state.createOrder === true) ? "opened": "")
     }
+
+    closeHeader = () =>{
+        this.setState({
+            headerOpen:false
+        })
+    }
+    toggleHeader = () =>{
+        this.setState({
+            headerOpen:!this.state.headerOpen
+        })
+    }
+
 
     render() {
         const { lng } = this.props;
@@ -115,7 +129,7 @@ class Detailedcatalog extends Component {
                     <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
                 </Head>
                 {this.state.loading && <Preloader></Preloader>}
-                <Header bgColor={"#fff"} textColor={"#000"}/>
+                <Header opened={this.state.headerOpen} toggleHeader={this.toggleHeader} bgColor={"#fff"} textColor={"#000"}/>
                 <div className={this.isActive()}>
                     <OrderModal closeModal={this.createOrder}/>
                 </div>
