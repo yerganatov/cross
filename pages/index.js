@@ -215,7 +215,7 @@ class Index extends React.Component {
                         <div className="col-0 col-md-2"></div>
                         <div className="col-md-7 col-12 d-flex align-items-center">
                             <img className="d-none d-md-block mr-4"
-                                 src={process.env.PUBLIC_URL + '/static/logo-mobile.png'} alt=""/>
+                                 src={'../static/logo-mobile.png'} alt=""/>
                             <p>
                                 <span>{t("mainPage.ourMission.description")}</span>{t("mainPage.ourMission.descriptionInside")}
                             </p>
