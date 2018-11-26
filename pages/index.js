@@ -23,7 +23,8 @@ class Index extends React.Component {
             createOrder: false,
             loading: true,
             lng: "",
-            headerOpen: false
+            headerOpen: false,
+            width:0
         };
         this.ref = React.createRef();
 
@@ -39,9 +40,10 @@ class Index extends React.Component {
         await this.fetchProjects();
         this.setState({
             loading: false,
-            lng
+            lng,
+            width:window.innerWidth
         })
-        this.ref.current.innerHTML = this.ref.current.innerHTML.replace(/\u2028/g, ' ')
+        this.ref.current.innerHTML = this.ref.current.innerHTML.replace(/\u2028/g, ' ');
     }
 
 
@@ -196,7 +198,11 @@ class Index extends React.Component {
                     <div className="main-card-info d-flex row m-0 align-items-center">
                         <div className="col-0 col-md-3 p-0 m-0"></div>
                         <div className="middle-card col-md-6 col-12">
-                            <img src={'/static/main-card.png'} alt=""/>
+                            {
+                                this.state.width >768 ?
+                                    <img src={'/static/main-card.png'} alt=""/> :
+                                    <img src={'/static/main-card-mobile.png'} alt=""/>
+                            }
                             <h3>{t("mainPage.firstPart.companyName")}<br/>
                                 <span>{t("mainPage.firstPart.companyNameSub")}</span></h3>
                         </div>
