@@ -12,18 +12,23 @@ import "./home.scss";
 
 
 class Index extends React.Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            projects: [],
+            catalog: [],
+            team: [],
+            services: [],
+            partners: [],
+            createOrder: false,
+            loading: true,
+            lng: "",
+            headerOpen: false
+        };
+        this.ref = React.createRef();
 
-    state = {
-        projects: [],
-        catalog: [],
-        team: [],
-        services: [],
-        partners: [],
-        createOrder: false,
-        loading: true,
-        lng: "",
-        headerOpen:false
     }
+
 
     async componentDidMount() {
         const {lng} = this.props;
@@ -36,6 +41,7 @@ class Index extends React.Component {
             loading: false,
             lng
         })
+        this.ref.current.innerHTML = this.ref.current.innerHTML.replace(/\u2028/g, ' ')
     }
 
 
@@ -130,24 +136,24 @@ class Index extends React.Component {
         return "modalViewWrap " + ((this.state.createOrder === true) ? "opened" : "")
     }
 
-    closeHeader = () =>{
+    closeHeader = () => {
         this.setState({
-            headerOpen:false
+            headerOpen: false
         })
     }
-    toggleHeader = () =>{
+    toggleHeader = () => {
         this.setState({
-            headerOpen:!this.state.headerOpen
+            headerOpen: !this.state.headerOpen
         })
     }
 
 
     render() {
         const {t, i18n, lng} = this.props;
-
+        console.log(this.ref);
 
         return (
-            <div className="Home d-flex flex-column">
+            <div ref={this.ref} className="Home d-flex flex-column">
                 <Head>
                     <title>{t("titles.mainPage")}</title>
                     <link rel="apple-touch-icon" sizes="57x57" href="/static/apple-icon-57x57.png"/>
@@ -168,6 +174,8 @@ class Index extends React.Component {
                     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png"/>
                     <meta name="theme-color" content="#ffffff"/>
                     <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
+
+
                 </Head>
                 {this.state.loading && <Preloader></Preloader>}
                 <div className="lines-cover row mx-0 d-none d-md-flex">
@@ -184,7 +192,7 @@ class Index extends React.Component {
                 <div className={this.isActive()}>
                     <OrderModal closeModal={this.createOrder}/>
                 </div>
-                <div onClick={this.closeHeader}   className="landing d-flex flex-column w-100">
+                <div onClick={this.closeHeader} className="landing d-flex flex-column w-100">
 
                     <div className="main-card-info d-flex row m-0 align-items-center">
                         <div className="col-0 col-md-3 p-0 m-0"></div>
@@ -225,35 +233,35 @@ class Index extends React.Component {
                                         let data;
                                         switch (lng) {
                                             case "ru": {
-                                                if(item.ru.title === ""){
+                                                if (item.ru.title === "") {
                                                     return;
                                                 }
                                                 data = item.ru;
                                                 break;
                                             }
                                             case "en": {
-                                                if(item.en.title === ""){
+                                                if (item.en.title === "") {
                                                     return;
                                                 }
                                                 data = item.en;
                                                 break;
                                             }
                                             case "ru-RU": {
-                                                if(item.ru.title === ""){
+                                                if (item.ru.title === "") {
                                                     return;
                                                 }
                                                 data = item.ru;
                                                 break;
                                             }
                                             case "en-US": {
-                                                if(item.en.title === ""){
+                                                if (item.en.title === "") {
                                                     return;
                                                 }
                                                 data = item.en;
                                                 break;
                                             }
                                             case "gr": {
-                                                if(item.gr.title === ""){
+                                                if (item.gr.title === "") {
                                                     return;
                                                 }
                                                 data = item.gr
@@ -264,7 +272,7 @@ class Index extends React.Component {
                                             }
 
                                         }
-                                        if(item.gr.title !== "") {
+                                        if (item.gr.title !== "") {
                                             console.log(item)
                                             return (
                                                 <div className="col-12 col-md-4 p-0 pr-4 mb-4 mb-md-5">
@@ -316,35 +324,35 @@ class Index extends React.Component {
                                 let data;
                                 switch (lng) {
                                     case "ru": {
-                                        if(item.ru.title === ""){
+                                        if (item.ru.title === "") {
                                             return;
                                         }
                                         data = item.ru;
                                         break;
                                     }
                                     case "en": {
-                                        if(item.en.title === ""){
+                                        if (item.en.title === "") {
                                             return;
                                         }
                                         data = item.en;
                                         break;
                                     }
                                     case "ru-RU": {
-                                        if(item.ru.title === ""){
+                                        if (item.ru.title === "") {
                                             return;
                                         }
                                         data = item.ru;
                                         break;
                                     }
                                     case "en-US": {
-                                        if(item.en.title === ""){
+                                        if (item.en.title === "") {
                                             return;
                                         }
                                         data = item.en;
                                         break;
                                     }
                                     case "gr": {
-                                        if(item.gr.title === ""){
+                                        if (item.gr.title === "") {
                                             return;
                                         }
                                         data = item.gr
@@ -389,35 +397,35 @@ class Index extends React.Component {
                                 let data;
                                 switch (this.props.lng) {
                                     case "ru": {
-                                        if(item.ru.title === ""){
+                                        if (item.ru.title === "") {
                                             return;
                                         }
                                         data = item.ru;
                                         break;
                                     }
                                     case "en": {
-                                        if(item.en.title === ""){
+                                        if (item.en.title === "") {
                                             return;
                                         }
                                         data = item.en;
                                         break;
                                     }
                                     case "ru-RU": {
-                                        if(item.ru.title === ""){
+                                        if (item.ru.title === "") {
                                             return;
                                         }
                                         data = item.ru;
                                         break;
                                     }
                                     case "en-US": {
-                                        if(item.en.title === ""){
+                                        if (item.en.title === "") {
                                             return;
                                         }
                                         data = item.en;
                                         break;
                                     }
                                     case "gr": {
-                                        if(item.gr.title === ""){
+                                        if (item.gr.title === "") {
                                             return;
                                         }
                                         data = item.gr
@@ -453,35 +461,35 @@ class Index extends React.Component {
                                     let data;
                                     switch (lng) {
                                         case "ru": {
-                                            if(item.ru.title === ""){
+                                            if (item.ru.title === "") {
                                                 return;
                                             }
                                             data = item.ru;
                                             break;
                                         }
                                         case "en": {
-                                            if(item.en.title === ""){
+                                            if (item.en.title === "") {
                                                 return;
                                             }
                                             data = item.en;
                                             break;
                                         }
                                         case "ru-RU": {
-                                            if(item.en.title === ""){
+                                            if (item.en.title === "") {
                                                 return;
                                             }
                                             data = item.ru;
                                             break;
                                         }
                                         case "en-US": {
-                                            if(item.ru.title === ""){
+                                            if (item.ru.title === "") {
                                                 return;
                                             }
                                             data = item.en;
                                             break;
                                         }
                                         case "gr": {
-                                            if(item.gr.title === ""){
+                                            if (item.gr.title === "") {
                                                 return;
                                             }
                                             data = item.gr
@@ -532,7 +540,9 @@ class Index extends React.Component {
                                     href="tel:+77751534575">+ 7 (775) 153-45-75</a></span>
                                     <br/> {t("mainPage.ourContacts.address")}</p>
                                 <Map width={"100%"} height={"20rem"} borderRadius={3} id="map"
-                                     onAPIAvailable={function () { console.log('API loaded'); }} center={[43.2368614, 76.9154467]} zoom={16}>
+                                     onAPIAvailable={function () {
+                                         console.log('API loaded');
+                                     }} center={[43.2368614, 76.9154467]} zoom={16}>
                                     <Marker lat={43.2368614} lon={76.9154467}/>
                                 </Map>
                             </div>
