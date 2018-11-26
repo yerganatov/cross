@@ -150,7 +150,6 @@ class Index extends React.Component {
 
     render() {
         const {t, i18n, lng} = this.props;
-        console.log(this.ref);
 
         return (
             <div ref={this.ref} className="Home d-flex flex-column">

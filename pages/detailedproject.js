@@ -172,7 +172,6 @@ class detailedProject extends Component {
                         <div className="tag-list d-flex flex-wrap">
                             {
                                 data.tags.map((item, index) => {
-                                    console.log(item)
                                     return (
                                         <p className="tag" key={index}>{item.text}</p>
                                     )
