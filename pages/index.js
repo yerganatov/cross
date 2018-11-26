@@ -292,8 +292,11 @@ class Index extends React.Component {
                             </div>
                             <h2>{t("mainPage.ourServices.subTitle")}</h2>
                         </div>
-                        <img className="d-none d-md-block"
-                             src={'../static/main-our-services.jpg'} alt=""/>
+                        {
+                            this.state.width > 768 ?   <img className="d-block"
+                                                            src={'../static/main-our-services.jpg'} alt=""/>:null
+                        }
+
                     </div>
 
                     <div className="our-partners d-flex flex-column align-items-center">
