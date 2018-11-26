@@ -372,7 +372,7 @@ class Index extends React.Component {
                                 }
                                 return (
                                     <div className="col-md-6 col-12 p-3">
-                                        <ProjectCard image={item.images[0]} id={item.id} item={data}/>
+                                        <ProjectCard image={item.images !==  undefined ? item.images[0]: ""} id={item.id} item={data}/>
                                     </div>
                                 )
                             })}
