@@ -87,12 +87,20 @@ class Detailedcatalog extends Component {
             requestPartners:""
         };
         switch (lng) {
-            case "ru-RU": {
+            case "ru": {
                 data = catalog.ru;
                 break;
             }
             case "en": {
+                data = catalog.en;
+                break;
+            }
+            case "ru-RU": {
                 data = catalog.ru;
+                break;
+            }
+            case "en-US": {
+                data = catalog.en;
                 break;
             }
             case "gr": {

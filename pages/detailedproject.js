@@ -114,12 +114,20 @@ class detailedProject extends Component {
             title: ""
         };
         switch (lng) {
-            case "ru-RU": {
+            case "ru": {
                 data = project.ru;
                 break;
             }
             case "en": {
+                data = project.en;
+                break;
+            }
+            case "ru-RU": {
                 data = project.ru;
+                break;
+            }
+            case "en-US": {
+                data = project.en;
                 break;
             }
             case "gr": {

@@ -35,8 +35,9 @@ class Header extends Component {
     }
 
     closeModalChangeLang = (lng) => {
+        const {toggleHeader} = this.props;
         this.changeLanguage(lng);
-        this.hrefClicked();
+        toggleHeader();
     }
 
     render() {
@@ -68,19 +69,19 @@ class Header extends Component {
                     <div className="nav-menu d-flex flex-md-row flex-column justify-content-md-between w-100">
                         <div className="d-flex flex-md-row flex-column">
                             <div className="d-flex flex-column mr-0 mr-md-5">
-                                <a onClick={this.hrefClicked} style={{color: textColor}}
+                                <a onClick={toggleHeader} style={{color: textColor}}
                                    href="/#services">{t("navigation.services")}</a>
-                                <a onClick={this.hrefClicked} style={{color: textColor}}
+                                <a onClick={toggleHeader} style={{color: textColor}}
                                    href="/#works">{t("navigation.works")}</a>
-                                <a onClick={this.hrefClicked} style={{color: textColor}}
+                                <a onClick={toggleHeader} style={{color: textColor}}
                                    href="/#catalog">{t("navigation.catalogs")}</a>
                             </div>
                             <div className="d-flex flex-column ml-0 ml-md-5">
-                                <a onClick={this.hrefClicked} style={{color: textColor}}
+                                <a onClick={toggleHeader} style={{color: textColor}}
                                    href="/">{t("navigation.influensers")}</a>
-                                <a onClick={this.hrefClicked} style={{color: textColor}}
+                                <a onClick={toggleHeader} style={{color: textColor}}
                                    href="/#team">{t("navigation.team")}</a>
-                                <a onClick={this.hrefClicked} style={{color: textColor}}
+                                <a onClick={toggleHeader} style={{color: textColor}}
                                    href="/#contact">{t("navigation.contacts")}</a>
                             </div>
                         </div>

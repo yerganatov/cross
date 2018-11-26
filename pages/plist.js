@@ -89,22 +89,44 @@ class plist extends Component {
                         {this.state.projects.map(item => {
                             let data;
                             switch (lng) {
-                                case "ru-RU": {
+                                case "ru": {
+                                    if(item.ru.title === ""){
+                                        return;
+                                    }
                                     data = item.ru;
                                     break;
                                 }
                                 case "en": {
+                                    if(item.en.title === ""){
+                                        return;
+                                    }
+                                    data = item.en;
+                                    break;
+                                }
+                                case "ru-RU": {
+                                    if(item.ru.title === ""){
+                                        return;
+                                    }
                                     data = item.ru;
                                     break;
                                 }
+                                case "en-US": {
+                                    if(item.en.title === ""){
+                                        return;
+                                    }
+                                    data = item.en;
+                                    break;
+                                }
                                 case "gr": {
+                                    if(item.gr.title === ""){
+                                        return;
+                                    }
                                     data = item.gr
                                     break;
                                 }
                                 default: {
                                     break;
                                 }
-
                             }
                             return (
                                 <div className="col-md-6 col-12 p-3">
