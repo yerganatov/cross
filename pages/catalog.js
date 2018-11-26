@@ -27,7 +27,6 @@ class Catalog extends Component{
             const snapshots = await db.collection('catalog').get();
             let problems = [];
             snapshots.forEach(s => {
-                console.log(s);
                 const data = s.data();
                 data["id"] = s.id;
                 problems.push(data);

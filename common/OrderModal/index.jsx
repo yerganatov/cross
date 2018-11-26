@@ -26,7 +26,8 @@ class OrderModal extends Component{
                 phone:""
             })
             closeModal();
-            console.log("success")})
+        }
+            )
     }
     render(){
         const { t, i18n } = this.props;

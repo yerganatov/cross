@@ -32,7 +32,6 @@ class Index extends React.Component {
         this.fetchServices();
         this.fetchPartners();
         await this.fetchProjects();
-        console.log(this.props);
         this.setState({
             loading: false,
             lng
@@ -68,8 +67,6 @@ class Index extends React.Component {
                 problems.push(data);
             });
             let projects = problems.slice(0, 4);
-            console.log(projects)
-            console.log(this.props.lng)
             await this.setState({projects: [...projects]});
         } catch (error) {
             alert(error.message);

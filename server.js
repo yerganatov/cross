@@ -2,6 +2,7 @@ const express = require('express')
 const path = require('path')
 const { parse } = require('url')
 const next = require('next')
+const compression = require('compression')
 
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({dev})
@@ -29,6 +30,7 @@ i18n
         app.prepare()
             .then(() => {
                 const server = express()
+                server.use(compression())
 
                 // enable middleware for i18next
                 server.use(i18nextMiddleware.handle(i18n))
@@ -49,6 +51,7 @@ i18n
                 })
                 // use next.js
                 server.get('*', (req, res) => {
+                    res.flush()
                     const parsedUrl = parse(req.url, true)
                     const {  query } = parsedUrl
 
