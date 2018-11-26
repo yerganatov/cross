@@ -78,6 +78,7 @@ class detailedProject extends Component {
         })
     }
     toggleHeader = () =>{
+        console.log("dasd")
         this.setState({
             headerOpen:!this.state.headerOpen
         })
@@ -162,6 +163,7 @@ class detailedProject extends Component {
                     <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
                 </Head>
                 {this.state.loading && <Preloader></Preloader>}
+
                 <Header opened={this.state.headerOpen} toggleHeader={this.toggleHeader} bgColor={"#000"}/>
 
                 <div className="landing">

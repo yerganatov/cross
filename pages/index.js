@@ -144,6 +144,7 @@ class Index extends React.Component {
         })
     }
     toggleHeader = () => {
+        console.log("sadds")
         this.setState({
             headerOpen: !this.state.headerOpen
         })
@@ -154,7 +155,7 @@ class Index extends React.Component {
         const {t, i18n, lng} = this.props;
 
         return (
-            <div ref={this.ref} className="Home d-flex flex-column">
+            <div className="Home d-flex flex-column">
                 <Head>
                     <title>{t("titles.mainPage")}</title>
                     <link rel="apple-touch-icon" sizes="57x57" href="/static/apple-icon-57x57.png"/>
@@ -215,7 +216,7 @@ class Index extends React.Component {
                         </div>
                     </div>
 
-                    <div className="our-mission d-flex align-items-center row mx-0 w-100">
+                    <div ref={this.ref}  className="our-mission d-flex align-items-center row mx-0 w-100">
                         <h2 className="d-none d-md-block text-center">{t("mainPage.ourMission.title")}</h2>
                         <div className="col-0 col-md-2"></div>
                         <div className="col-md-7 col-12 d-flex align-items-center">
