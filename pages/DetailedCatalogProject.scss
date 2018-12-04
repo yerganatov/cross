@@ -29,6 +29,7 @@
   padding-left: 10rem;
   padding-right: 10rem;
   padding-bottom: 2rem;
+  min-height: calc(100vh - 25rem);
   @media (max-width: 798px) {
     margin-top: 10vh;
     padding-left: 2rem;

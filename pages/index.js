@@ -2,7 +2,7 @@ import React from 'react';
 import Head from 'next/head'
 import {withI18next} from '../lib/withI18next'
 
-import {Map, Marker, MarkerLayout} from 'yandex-map-react';
+import GoogleMapReact from 'google-map-react';
 
 import {Header, Footer, ProjectCard, CatalogItem, Preloader, OrderModal} from "../common";
 import firebase from "../api/firebase";
@@ -10,9 +10,10 @@ import firebase from "../api/firebase";
 const db = firebase.firestore();
 import "./home.scss";
 
+const AnyReactComponent = ({text}) => <div>{text}</div>;
 
 class Index extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props)
         this.state = {
             projects: [],
@@ -24,7 +25,13 @@ class Index extends React.Component {
             loading: true,
             lng: "",
             headerOpen: false,
-            width:0
+            width: 0,
+            contacts: {},
+            currentContact:{
+                email:"",
+                phone:"",
+                address:""
+            }
         };
         this.ref = React.createRef();
 
@@ -37,13 +44,29 @@ class Index extends React.Component {
         this.fetchTeam();
         this.fetchServices();
         this.fetchPartners();
+        this.fetchContacts();
         await this.fetchProjects();
         this.setState({
             loading: false,
             lng,
-            width:window.innerWidth
+            width: window.innerWidth
         })
         this.ref.current.innerHTML = this.ref.current.innerHTML.replace(/\u2028/g, ' ');
+    }
+
+    fetchContacts = async () => {
+        try {
+            const snapshot = await db.collection('contacts').doc("fHjNkcn2zz7XE7EyImdh").get();
+
+            let project = snapshot.data();
+            this.setState({
+                contacts: project
+            })
+            this.returnContacts();
+
+        } catch (error) {
+            alert(error.message);
+        }
     }
 
 
@@ -150,10 +173,90 @@ class Index extends React.Component {
         })
     }
 
+    returnContacts = () =>{
+        const {t, i18n, lng} = this.props;
+
+        switch (lng) {
+            case "ru": {
+                this.setState({
+                    currentContact: this.state.contacts.ru
+                })
+                break;
+            }
+            case "en": {
+
+                this.setState({
+                    currentContact: this.state.contacts.en
+                })
+                break;
+            }
+            case "ru-RU": {
+                this.setState({
+                    currentContact: this.state.contacts.ru
+                })
+
+                break;
+            }
+            case "en-US": {
+                this.setState({
+                    currentContact: this.state.contacts.en
+                })
+
+                break;
+            }
+            case "gr": {
+                this.setState({
+                    currentContact: this.state.contacts.gr
+                })
+
+                break;
+            }
+            default: {
+                break;
+            }
+        }
+
+
+    }
+
 
     render() {
         const {t, i18n, lng} = this.props;
+        let contacts = {
+            address:"",
+            email:"",
+            phone:""
+        };
+        switch (lng) {
+            case "ru": {
 
+                contacts = this.state.contacts.ru;
+                break;
+            }
+            case "en": {
+
+                contacts = this.state.contacts.en;
+                break;
+            }
+            case "ru-RU": {
+
+                contacts = this.state.contacts.ru;
+                break;
+            }
+            case "en-US": {
+
+                contacts = this.state.contacts.en;
+                break;
+            }
+            case "gr": {
+
+                contacts = this.state.contacts.gr
+                break;
+            }
+            default: {
+                break;
+            }
+        }
         return (
             <div className="Home d-flex flex-column">
                 <Head>
@@ -190,7 +293,12 @@ class Index extends React.Component {
                     </div>
                     <div className="col-3"></div>
                 </div>
-                <Header opened={this.state.headerOpen} toggleHeader={this.toggleHeader} bgColor={"#000"}/>
+
+
+                <Header contacts={contacts} opened={this.state.headerOpen} toggleHeader={this.toggleHeader}
+                        bgColor={"#000"}/>
+
+
                 <div className={this.isActive()}>
                     <OrderModal closeModal={this.createOrder}/>
                 </div>
@@ -200,7 +308,7 @@ class Index extends React.Component {
                         <div className="col-0 col-md-3 p-0 m-0"></div>
                         <div className="middle-card col-md-6 col-12">
                             {
-                                this.state.width >768 ?
+                                this.state.width > 768 ?
                                     <img src={'/static/main-card.png'} alt=""/> :
                                     <img src={'/static/main-card-mobile.png'} alt=""/>
                             }
@@ -216,7 +324,7 @@ class Index extends React.Component {
                         </div>
                     </div>
 
-                    <div ref={this.ref}  className="our-mission d-flex align-items-center row mx-0 w-100">
+                    <div ref={this.ref} className="our-mission d-flex align-items-center row mx-0 w-100">
                         <h2 className="d-none d-md-block text-center">{t("mainPage.ourMission.title")}</h2>
                         <div className="col-0 col-md-2"></div>
                         <div className="col-md-7 col-12 d-flex align-items-center">
@@ -294,8 +402,9 @@ class Index extends React.Component {
                             <h2>{t("mainPage.ourServices.subTitle")}</h2>
                         </div>
                         {
-                            this.state.width > 768 ?   <img className="d-block"
-                                                            src={'../static/main-our-services.jpg'} alt=""/>:null
+                            this.state.width > 768 ? <img className="d-block"
+                                                          src={'../static/main-our-services.jpg'}
+                                                          alt=""/> : null
                         }
 
                     </div>
@@ -319,13 +428,15 @@ class Index extends React.Component {
                     <div id="works" style={{paddingTop: "-10rem"}}></div>
                     <div className="our-works d-flex flex-column">
                         <h2>{t("mainPage.ourWorks.subTitle")}</h2>
-                        <div className="d-flex flex-md-row w-100 mx-0 justify-content-between align-items-center">
+                        <div
+                            className="d-flex flex-md-row w-100 mx-0 justify-content-between align-items-center">
                             <div className="col-md-3 d-md-block d-none"></div>
                             <h3 className="col-md-6 col-9 text-md-center ">{t("mainPage.ourWorks.title")}</h3>
 
                             <a className="col-md-3 d-md-block d-none text-right"
                                href="/plist">{t("mainPage.ourWorks.seeMore")}→</a>
-                            <a className="d-md-none mr-3" href="/plist">{t("mainPage.ourWorks.seeMoreMobile")}→</a>
+                            <a className="d-md-none mr-3"
+                               href="/plist">{t("mainPage.ourWorks.seeMoreMobile")}→</a>
                         </div>
                         <div className="row d-flex justify-content-between mx-0 mt-4">
                             {this.state.projects.map(item => {
@@ -372,7 +483,8 @@ class Index extends React.Component {
                                 }
                                 return (
                                     <div className="col-md-6 col-12 p-3">
-                                        <ProjectCard image={item.images !==  undefined ? item.images[0]: ""} id={item.id} item={data}/>
+                                        <ProjectCard image={item.images !== undefined ? item.images[0] : ""}
+                                                     id={item.id} item={data}/>
                                     </div>
                                 )
                             })}
@@ -395,9 +507,11 @@ class Index extends React.Component {
                                    className="col-md-3 text-right">{t("mainPage.ourCatalog.seeMore")}→</a>
                             </div>
                         </div>
-                        <div className="mobile-view d-flex my-3 d-md-none align-items-center justify-content-between">
+                        <div
+                            className="mobile-view d-flex my-3 d-md-none align-items-center justify-content-between">
                             <h3 className="mb-0">Каталог</h3>
-                            <a href="/catalog" className="text-right mb-0">{t("mainPage.ourCatalog.seeMoreMobile")}→</a>
+                            <a href="/catalog"
+                               className="text-right mb-0">{t("mainPage.ourCatalog.seeMoreMobile")}→</a>
                         </div>
                         <div className="row">
                             {this.state.catalog.map(item => {
@@ -544,24 +658,37 @@ class Index extends React.Component {
                             </div>
                             <div className="col-md-1 col-12"></div>
                             <div className="col-md-5 col-12">
-                                <p><span><a href="mailto:contacts@press.kz">contacts@press.kz</a></span>, <span><a
-                                    href="tel:+77751534575">+ 7 (775) 153-45-75</a></span>
-                                    <br/> {t("mainPage.ourContacts.address")}</p>
-                                <Map width={"100%"} height={"20rem"} borderRadius={3} id="map"
-                                     onAPIAvailable={function () {
-                                         console.log('API loaded');
-                                     }} center={[43.2368614, 76.9154467]} zoom={16}>
-                                    <Marker lat={43.2368614} lon={76.9154467}/>
-                                </Map>
+                                <p><span><a href={"mailto:" +  this.state.currentContact.email}>{this.state.currentContact.email}</a></span>, <span><a
+                                    href={"tel:"  + this.state.currentContact.phone}>{this.state.currentContact.phone}</a></span>
+                                    <br/> {this.state.currentContact.address}</p>
+
+                                <GoogleMapReact
+                                    bootstrapURLKeys={{key: "AIzaSyAwTUc-pTmnfUJn4kSpS09JQhN-_Rz_SdE"}}
+                                    defaultCenter={{lat: 43.2368614, lng: 76.9154467}}
+                                    defaultZoom={16}
+                                >
+                                    <AnyReactComponent
+                                        lat={43.2368614}
+                                        lng={76.9154467}
+                                        text={'Kreyser Avrora'}
+                                    />
+
+                                </GoogleMapReact>
+
+
                             </div>
                             <div className="col-md-2 col-12"></div>
                         </div>
                     </div>
                 </div>
-                <Footer bgColor="#000"/>
+                <Footer contacts={contacts} bgColor="#000"/>
             </div>
         );
     }
 }
 
-export default withI18next(["translation"])(Index)
+export default withI18next(["translation"])
+
+(
+    Index
+)

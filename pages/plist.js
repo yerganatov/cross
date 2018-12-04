@@ -137,7 +137,7 @@ class plist extends Component {
 
                     </div>
                 </div>
-                <Footer bgColor="#000"/>
+                <Footer  bgColor="#000"/>
             </div>
         )
     }

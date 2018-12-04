@@ -20,6 +20,9 @@
       top: 20px;
     }
   }
+  .icon-link {
+    white-space: nowrap;
+  }
   .logo-mobile {
     position: absolute;
     top: 10px;
@@ -124,11 +127,25 @@
           letter-spacing: normal;
           color: #000000;
           margin-bottom: .6rem;
+
+          svg {
+            height: 1rem;
+            width: 1rem;
+            fill: black;
+            margin-right: .5rem;
+            transition: .3s;
+          }
           &:hover {
             color: #01ACF2;
+            svg {
+              fill: #01ACF2;
+            }
           }
           &:active {
             color: #0080B3;
+            svg {
+              fill: #0080B3;
+            }
           }
         }
         @media (max-width: 768px) {
@@ -142,6 +159,9 @@
               margin-bottom: 0;
               font-size: 1rem;
               opacity: .5;
+            }
+            .icon-link {
+              opacity: 1;
             }
           }
         }
