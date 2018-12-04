@@ -34,13 +34,13 @@ class OrderModal extends Component{
         const {closeModal} = this.props;
         return(
             <div className="OrderModal d-flex align-items-center justify-content-center">
-                <div  className="modal-view d-flex flex-column px-5 py-3 pb-5">
+                <form  className="modal-view d-flex flex-column px-5 py-3 pb-5">
                     <div className="close-modal w-100" onClick={closeModal}>✕</div>
                     <p>{t("formModal.typeInformation")}</p>
                     <input className="mb-4" type="text" required={true} onChange={(e) => this.setState({name:e.target.value})} value={this.state.name} maxLength="32" placeholder={t("formModal.name")}/>
-                    <input className="mb-4" type="phone" required={true} onChange={(e) => this.setState({phone:e.target.value})} value={this.state.phone} placeholder={t("formModal.phone")}/>
+                    <input className="mb-4" type="tel" pattern="[0-9]*" required={true} onChange={(e) => this.setState({phone:e.target.value})} value={this.state.phone} placeholder={t("formModal.phone")}/>
                     <button onClick={this.sendMessage} className="text-md-center text-left">{t("formModal.button")}</button>
-                </div>
+                </form>
 
             </div>
         )
