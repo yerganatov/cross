@@ -111,7 +111,6 @@ class Catalog extends Component{
 
     render(){
         const { t, i18n, lng } = this.props;
-        this.returnContacts();
         return(
             <div className="Catalog d-flex flex-column">
                 <Head>

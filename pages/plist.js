@@ -114,7 +114,6 @@ class plist extends Component {
 
     render(){
         const { t, i18n, lng} = this.props;
-        this.returnContacts();
         return(
 
             <div className="ProjectList">
