@@ -39,8 +39,6 @@ class Footer extends Component {
             </div>
             <div className="contacts-nav d-flex flex-column align-items-md-end mt-4 mt-md-0 ml-0 ml-md-5">
                 <a style={{color: textColor}} href="">{contacts.address}</a>
-                <a style={{color: textColor}} href={contacts.facebook}>{contacts.facebook}</a>
-                
                 <a style={{color: textColor}} href={"tel:" + contacts.phone}>{contacts.phone}</a>
                 <a style={{color: textColor}} href={"mailto:"+ contacts.email}>{contacts.email}</a>
             </div>
