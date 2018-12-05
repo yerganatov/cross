@@ -11,15 +11,77 @@ class Catalog extends Component{
     state ={
         catalog: [],
         loading:true,
-        headerOpen:false
+        headerOpen:false,
+        contacts:{}
     }
 
     async componentDidMount(){
         await this.fetchCatalog();
+        await this.fetchContacts();
         this.setState({
             loading:false
         })
     }
+    fetchContacts = async () => {
+        try {
+            const snapshot = await db.collection('contacts').doc("fHjNkcn2zz7XE7EyImdh").get();
+
+            let project = snapshot.data();
+            this.setState({
+                contacts: project
+            })
+            this.returnContacts();
+
+        } catch (error) {
+            alert(error.message);
+        }
+    }
+    returnContacts = () =>{
+        const {t, i18n, lng} = this.props;
+
+        switch (lng) {
+            case "ru": {
+                this.setState({
+                    currentContact: this.state.contacts.ru
+                })
+                break;
+            }
+            case "en": {
+
+                this.setState({
+                    currentContact: this.state.contacts.en
+                })
+                break;
+            }
+            case "ru-RU": {
+                this.setState({
+                    currentContact: this.state.contacts.ru
+                })
+
+                break;
+            }
+            case "en-US": {
+                this.setState({
+                    currentContact: this.state.contacts.en
+                })
+
+                break;
+            }
+            case "gr": {
+                this.setState({
+                    currentContact: this.state.contacts.gr
+                })
+
+                break;
+            }
+            default: {
+                break;
+            }
+        }
+
+
+    }
+
 
 
     fetchCatalog = async () => {
@@ -49,6 +111,7 @@ class Catalog extends Component{
 
     render(){
         const { t, i18n, lng } = this.props;
+        this.returnContacts();
         return(
             <div className="Catalog d-flex flex-column">
                 <Head>
@@ -73,7 +136,7 @@ class Catalog extends Component{
                     <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
                 </Head>
                 {this.state.loading && <Preloader></Preloader>}
-                <Header opened={this.state.headerOpen} toggleHeader={this.toggleHeader} bgColor={"#000"}/>
+                <Header contacts={this.state.currentContact} opened={this.state.headerOpen} toggleHeader={this.toggleHeader} bgColor={"#000"}/>
                 <div className="main-article w-100 d-flex flex-column align-items-center">
                     <h2>{t("catalog.subTitle")}</h2>
                     <h3 className="title">{t("catalog.title")}</h3>
@@ -132,7 +195,7 @@ class Catalog extends Component{
 
                     </div>
                 </div>
-                <Footer bgColor="#fff" textColor="#000"/>
+                <Footer  contacts={this.state.currentContact} bgColor="#fff" textColor="#000"/>
             </div>
         )
     }
