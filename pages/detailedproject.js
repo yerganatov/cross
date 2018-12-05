@@ -127,11 +127,10 @@ class detailedProject extends Component {
             const snapshot = await db.collection('projects').doc(this.props.url).get();
             let project = snapshot.data();
             console.log(project);
-            this.setState({
+            await this.setState({
                 project:project,
 
             })
-            console.log(this.state.project,this.state.loading)
 
             if(project !== undefined) {
                 this.setState({

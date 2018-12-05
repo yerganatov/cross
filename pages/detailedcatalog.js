@@ -113,7 +113,7 @@ class Detailedcatalog extends Component {
         try {
             const snapshot = await db.collection('catalog').doc(this.props.url).get();
             let project = snapshot.data();
-            this.setState({
+            await this.setState({
                 catalog: project
             })
             this.setState({
