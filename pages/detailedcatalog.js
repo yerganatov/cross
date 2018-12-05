@@ -150,7 +150,6 @@ class Detailedcatalog extends Component {
 
     render() {
         const {t} = this.props;
-        console.log(this.state.catalog);
 
         if (this.state.catalog !== undefined) {
 

@@ -75,7 +75,6 @@ class detailedProject extends Component {
     }
     returnContacts = () =>{
         const {t, i18n, lng} = this.props;
-        console.log("ss")
 
         switch (lng) {
             case "ru": {
@@ -116,7 +115,6 @@ class detailedProject extends Component {
                 break;
             }
         }
-        console.log(this.state.currentContact)
 
 
     }
@@ -126,7 +124,6 @@ class detailedProject extends Component {
         try {
             const snapshot = await db.collection('projects').doc(this.props.url).get();
             let project = snapshot.data();
-            console.log(project);
             await this.setState({
                 project:project,
 

@@ -1,17 +1,28 @@
 import React from 'react';
 import Head from 'next/head'
-import {withI18next} from '../lib/withI18next'
+import { withI18next } from '../lib/withI18next'
 
+import { GoogleMap, Marker, withGoogleMap, withScriptjs } from "react-google-maps"
 import GoogleMapReact from 'google-map-react';
 
-import {Header, Footer, ProjectCard, CatalogItem, Preloader, OrderModal} from "../common";
+import { Header, Footer, ProjectCard, CatalogItem, Preloader, OrderModal } from "../common";
 import firebase from "../api/firebase";
+import * as Email from "emailjs-com";
 
 const db = firebase.firestore();
 import "./home.scss";
 
-const AnyReactComponent = ({text}) => <div>{text}</div>;
-
+const AnyReactComponent = ({ text }) => <div>{text}</div>;
+const MapWithAMarker = withScriptjs(withGoogleMap(props =>
+    <GoogleMap
+        defaultZoom={16}
+        defaultCenter={{ lat: 43.2368614, lng: 76.9154467 }}
+    >
+        <Marker
+            position={{ lat: 43.2368614, lng: 76.9154467 }}
+        />
+    </GoogleMap>
+));
 class Index extends React.Component {
     constructor(props) {
         super(props)
@@ -27,11 +38,13 @@ class Index extends React.Component {
             headerOpen: false,
             width: 0,
             contacts: {},
-            currentContact:{
-                email:"",
-                phone:"",
-                address:""
-            }
+            currentContact: {
+                email: "",
+                phone: "",
+                address: ""
+            },
+            phone: "",
+            name: ""
         };
         this.ref = React.createRef();
 
@@ -39,7 +52,7 @@ class Index extends React.Component {
 
 
     async componentDidMount() {
-        const {lng} = this.props;
+        const { lng } = this.props;
         this.fetchCatalog();
         this.fetchTeam();
         this.fetchServices();
@@ -82,7 +95,7 @@ class Index extends React.Component {
             projects.sort((a, b) => {
                 return a.id - b.id;
             })
-            await this.setState({team: [...projects]});
+            await this.setState({ team: [...projects] });
         } catch (error) {
             alert(error.message);
         }
@@ -98,7 +111,7 @@ class Index extends React.Component {
                 problems.push(data);
             });
             let projects = problems.slice(0, 4);
-            await this.setState({projects: [...projects]});
+            await this.setState({ projects: [...projects] });
         } catch (error) {
             alert(error.message);
         }
@@ -113,7 +126,7 @@ class Index extends React.Component {
                 problems.push(data);
             });
             let projects = problems.slice(0, 4);
-            await this.setState({catalog: [...projects]});
+            await this.setState({ catalog: [...projects] });
         } catch (error) {
             alert(error.message);
         }
@@ -129,7 +142,7 @@ class Index extends React.Component {
             });
 
             let projects = problems;
-            await this.setState({services: [...projects]});
+            await this.setState({ services: [...projects] });
         } catch (error) {
             alert(error.message);
         }
@@ -144,11 +157,30 @@ class Index extends React.Component {
                 problems.push(data);
             });
             let projects = problems;
-            await this.setState({partners: [...projects]});
+            await this.setState({ partners: [...projects] });
         } catch (error) {
             alert(error.message);
         }
     };
+    sendMessage = (event) => {
+
+
+        const templateParams = {
+            from_name: this.state.name,
+            to_name: "fiery.fox92@gmail.com",
+            phone_number: this.state.phone
+        }
+
+        Email.send("gmail", "template_Ea8KvF1V", templateParams, "user_Bpwt8Y7KRuVLrNCWvTvyp").then((response) => {
+            this.setState({
+                name: "",
+                phone: ""
+            })
+            alert("С вами свяжутся в ближайшее время")
+        }
+        )
+        event.preventDefault();
+    }
 
 
     createOrder = () => {
@@ -167,14 +199,13 @@ class Index extends React.Component {
         })
     }
     toggleHeader = () => {
-        console.log("sadds")
         this.setState({
             headerOpen: !this.state.headerOpen
         })
     }
 
-    returnContacts = () =>{
-        const {t, i18n, lng} = this.props;
+    returnContacts = () => {
+        const { t, i18n, lng } = this.props;
 
         switch (lng) {
             case "ru": {
@@ -221,11 +252,11 @@ class Index extends React.Component {
 
 
     render() {
-        const {t, i18n, lng} = this.props;
+        const { t, i18n, lng } = this.props;
         let contacts = {
-            address:"",
-            email:"",
-            phone:""
+            address: "",
+            email: "",
+            phone: ""
         };
         switch (lng) {
             case "ru": {
@@ -261,24 +292,24 @@ class Index extends React.Component {
             <div className="Home d-flex flex-column">
                 <Head>
                     <title>{t("titles.mainPage")}</title>
-                    <link rel="apple-touch-icon" sizes="57x57" href="/static/apple-icon-57x57.png"/>
-                    <link rel="apple-touch-icon" sizes="60x60" href="/static/apple-icon-60x60.png"/>
-                    <link rel="apple-touch-icon" sizes="72x72" href="/static/apple-icon-72x72.png"/>
-                    <link rel="apple-touch-icon" sizes="76x76" href="/static/apple-icon-76x76.png"/>
-                    <link rel="apple-touch-icon" sizes="114x114" href="/static/apple-icon-114x114.png"/>
-                    <link rel="apple-touch-icon" sizes="120x120" href="/static/apple-icon-120x120.png"/>
-                    <link rel="apple-touch-icon" sizes="144x144" href="/static/apple-icon-144x144.png"/>
-                    <link rel="apple-touch-icon" sizes="152x152" href="/static/apple-icon-152x152.png"/>
-                    <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-icon-180x180.png"/>
-                    <link rel="icon" type="image/png" sizes="192x192" href="/static/android-icon-192x192.png"/>
-                    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png"/>
-                    <link rel="icon" type="image/png" sizes="96x96" href="/static/favicon-96x96.png"/>
-                    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png"/>
-                    <link rel="manifest" href="/static/manifest.json"/>
-                    <meta name="msapplication-TileColor" content="#ffffff"/>
-                    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png"/>
-                    <meta name="theme-color" content="#ffffff"/>
-                    <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
+                    <link rel="apple-touch-icon" sizes="57x57" href="/static/apple-icon-57x57.png" />
+                    <link rel="apple-touch-icon" sizes="60x60" href="/static/apple-icon-60x60.png" />
+                    <link rel="apple-touch-icon" sizes="72x72" href="/static/apple-icon-72x72.png" />
+                    <link rel="apple-touch-icon" sizes="76x76" href="/static/apple-icon-76x76.png" />
+                    <link rel="apple-touch-icon" sizes="114x114" href="/static/apple-icon-114x114.png" />
+                    <link rel="apple-touch-icon" sizes="120x120" href="/static/apple-icon-120x120.png" />
+                    <link rel="apple-touch-icon" sizes="144x144" href="/static/apple-icon-144x144.png" />
+                    <link rel="apple-touch-icon" sizes="152x152" href="/static/apple-icon-152x152.png" />
+                    <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-icon-180x180.png" />
+                    <link rel="icon" type="image/png" sizes="192x192" href="/static/android-icon-192x192.png" />
+                    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png" />
+                    <link rel="icon" type="image/png" sizes="96x96" href="/static/favicon-96x96.png" />
+                    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png" />
+                    <link rel="manifest" href="/static/manifest.json" />
+                    <meta name="msapplication-TileColor" content="#ffffff" />
+                    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+                    <meta name="theme-color" content="#ffffff" />
+                    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
 
 
                 </Head>
@@ -296,11 +327,11 @@ class Index extends React.Component {
 
 
                 <Header contacts={contacts} opened={this.state.headerOpen} toggleHeader={this.toggleHeader}
-                        bgColor={"#000"}/>
+                    bgColor={"#000"} />
 
 
                 <div className={this.isActive()}>
-                    <OrderModal closeModal={this.createOrder}/>
+                    <OrderModal closeModal={this.createOrder} />
                 </div>
                 <div onClick={this.closeHeader} className="landing d-flex flex-column w-100">
 
@@ -309,16 +340,16 @@ class Index extends React.Component {
                         <div className="middle-card col-md-6 col-12">
                             {
                                 this.state.width > 768 ?
-                                    <img src={'/static/main-card.png'} alt=""/> :
-                                    <img src={'/static/main-card-mobile.png'} alt=""/>
+                                    <img src={'/static/main-card.png'} alt="" /> :
+                                    <img src={'/static/main-card-mobile.png'} alt="" />
                             }
-                            <h3>{t("mainPage.firstPart.companyName")}<br/>
+                            <h3>{t("mainPage.firstPart.companyName")}<br />
                                 <span>{t("mainPage.firstPart.companyNameSub")}</span></h3>
                         </div>
                         <div className="col-12 col-md-3 mx-0 mt-4 mt-md-0">
                             <p>
-                                {t("mainPage.firstPart.companyInfo.first")} <br/> <br/>
-                                {t("mainPage.firstPart.companyInfo.second")} <br/> <br/>
+                                {t("mainPage.firstPart.companyInfo.first")} <br /> <br />
+                                {t("mainPage.firstPart.companyInfo.second")} <br /> <br />
                                 {t("mainPage.firstPart.companyInfo.third")}
                             </p>
                         </div>
@@ -329,7 +360,7 @@ class Index extends React.Component {
                         <div className="col-0 col-md-2"></div>
                         <div className="col-md-7 col-12 d-flex align-items-center">
                             <img className="d-none d-md-block mr-4"
-                                 src={'../static/logo-mobile.png'} alt=""/>
+                                src={'../static/logo-mobile.png'} alt="" />
                             <p>
                                 <span>{t("mainPage.ourMission.description")}</span>{t("mainPage.ourMission.descriptionInside")}
                             </p>
@@ -337,7 +368,7 @@ class Index extends React.Component {
                         <div className="col-0 col-md-3"></div>
                     </div>
 
-                    <section id="services" style={{paddingTop: "-10rem"}}></section>
+                    <section id="services" style={{ paddingTop: "-10rem" }}></section>
                     <div className="our-services d-flex">
                         <div className="white-box d-flex flex-column p-2 p-md-5">
                             <h3 className="mb-5">{t("mainPage.ourServices.title")}</h3>
@@ -403,8 +434,8 @@ class Index extends React.Component {
                         </div>
                         {
                             this.state.width > 768 ? <img className="d-block"
-                                                          src={'../static/main-our-services.jpg'}
-                                                          alt=""/> : null
+                                src={'../static/main-our-services.jpg'}
+                                alt="" /> : null
                         }
 
                     </div>
@@ -417,7 +448,7 @@ class Index extends React.Component {
                                 this.state.partners.map((item) => {
                                     return (
                                         <a className="image-wrap" href={item.ru.title} target="_blank">
-                                            <img src={item.image} alt=""/>
+                                            <img src={item.image} alt="" />
                                         </a>
                                     )
                                 })
@@ -425,7 +456,7 @@ class Index extends React.Component {
                         </div>
                     </div>
 
-                    <div id="works" style={{paddingTop: "-10rem"}}></div>
+                    <div id="works" style={{ paddingTop: "-10rem" }}></div>
                     <div className="our-works d-flex flex-column">
                         <h2>{t("mainPage.ourWorks.subTitle")}</h2>
                         <div
@@ -434,9 +465,9 @@ class Index extends React.Component {
                             <h3 className="col-md-6 col-9 text-md-center ">{t("mainPage.ourWorks.title")}</h3>
 
                             <a className="col-md-3 d-md-block d-none text-right"
-                               href="/plist">{t("mainPage.ourWorks.seeMore")}→</a>
+                                href="/plist">{t("mainPage.ourWorks.seeMore")}→</a>
                             <a className="d-md-none mr-3"
-                               href="/plist">{t("mainPage.ourWorks.seeMoreMobile")}→</a>
+                                href="/plist">{t("mainPage.ourWorks.seeMoreMobile")}→</a>
                         </div>
                         <div className="row d-flex justify-content-between mx-0 mt-4">
                             {this.state.projects.map(item => {
@@ -484,7 +515,7 @@ class Index extends React.Component {
                                 return (
                                     <div className="col-md-6 col-12 p-3">
                                         <ProjectCard image={item.images !== undefined ? item.images[0] : ""}
-                                                     id={item.id} item={data}/>
+                                            id={item.id} item={data} />
                                     </div>
                                 )
                             })}
@@ -493,7 +524,7 @@ class Index extends React.Component {
                         </div>
                     </div>
 
-                    <div id="catalog" style={{paddingTop: "-10rem"}}></div>
+                    <div id="catalog" style={{ paddingTop: "-10rem" }}></div>
                     <div className="our-catalog d-flex flex-column">
                         <h2>{t("mainPage.ourCatalog.subTitle")}</h2>
                         <div className="desktop-view d-md-flex d-none flex-column mb-5">
@@ -504,14 +535,14 @@ class Index extends React.Component {
                                     {t("mainPage.ourCatalog.description")}
                                 </div>
                                 <a href="/catalog"
-                                   className="col-md-3 text-right">{t("mainPage.ourCatalog.seeMore")}→</a>
+                                    className="col-md-3 text-right">{t("mainPage.ourCatalog.seeMore")}→</a>
                             </div>
                         </div>
                         <div
                             className="mobile-view d-flex my-3 d-md-none align-items-center justify-content-between">
                             <h3 className="mb-0">Каталог</h3>
                             <a href="/catalog"
-                               className="text-right mb-0">{t("mainPage.ourCatalog.seeMoreMobile")}→</a>
+                                className="text-right mb-0">{t("mainPage.ourCatalog.seeMoreMobile")}→</a>
                         </div>
                         <div className="row">
                             {this.state.catalog.map(item => {
@@ -562,7 +593,7 @@ class Index extends React.Component {
 
                                     <div className="col-md-3 col-6">
                                         <CatalogItem image={item.image} onPress={this.createOrder} id={item.id}
-                                                     item={data} date={item.date}/>
+                                            item={data} date={item.date} />
                                     </div>
                                 )
                             })}
@@ -571,11 +602,11 @@ class Index extends React.Component {
                         </div>
                     </div>
 
-                    <div id="team" style={{paddingTop: "-10rem"}}></div>
+                    <div id="team" style={{ paddingTop: "-10rem" }}></div>
                     <div className="our-team d-flex flex-column align-items-center">
                         <h2>{t("mainPage.ourTeam.subTitle")}</h2>
                         <img className="logo-image mb-3" src={'/static/logo-mobile.png'}
-                             alt=""/>
+                            alt="" />
                         <h3>{t("mainPage.ourTeam.title")}</h3>
                         <div className="row mx-0 w-100 mt-5">
                             {
@@ -626,7 +657,7 @@ class Index extends React.Component {
 
                                         <div
                                             className="col-12 col-md-3 align-items-center d-flex flex-column mb-5 mb-md-4">
-                                            <img src={item.image} alt=""/>
+                                            <img src={item.image} alt="" />
                                             <h4>{data.name}</h4>
                                             <p>{data.workType}</p>
                                             <a href={"tel:" + data.phone}>{data.phone}</a>
@@ -640,40 +671,32 @@ class Index extends React.Component {
                         </div>
                     </div>
 
-                    <div id="contact" style={{paddingTop: "-10rem"}}></div>
+                    <div id="contact" style={{ paddingTop: "-10rem" }}></div>
                     <div className="contact-us d-flex flex-column">
                         <h2>{t("mainPage.ourContacts.subTitle")}</h2>
                         <h3>{t("mainPage.ourContacts.title")}</h3>
                         <div className="row mx-0 mt-2 mt-md-5">
                             <div className="col-md-4 col-12 mb-3 d-flex flex-column">
                                 <p>{t("mainPage.ourContacts.description")}</p>
-                                <form className="d-flex flex-column" action="">
-                                    <input className="mb-4" type="text" maxLength="32"
-                                           placeholder={t("mainPage.ourContacts.placeholderName")}/>
-                                    <input className="mb-4" type="phone"
-                                           placeholder={t("mainPage.ourContacts.placeholderPhone")}/>
-                                    <button
+                                <form onSubmit={this.sendMessage} className="d-flex flex-column" action="">
+                                    <input className="mb-4" type="text" required={true} onChange={(e) => this.setState({ name: e.target.value })} value={this.state.name} maxLength="32" placeholder={t("formModal.name")} />
+                                    <input className="mb-4" type="tel" pattern="[0-9]*" required={true} onChange={(e) => this.setState({ phone: e.target.value })} value={this.state.phone} placeholder={t("formModal.phone")} />
+                                    <button type="submit"
                                         className="text-md-center text-left">{t("mainPage.ourContacts.button")}</button>
                                 </form>
                             </div>
                             <div className="col-md-1 col-12"></div>
                             <div className="col-md-5 col-12">
-                                <p><span><a href={"mailto:" +  this.state.currentContact.email}>{this.state.currentContact.email}</a></span>, <span><a
-                                    href={"tel:"  + this.state.currentContact.phone}>{this.state.currentContact.phone}</a></span>
-                                    <br/> {this.state.currentContact.address}</p>
+                                <p><span><a href={"mailto:" + this.state.currentContact.email}>{this.state.currentContact.email}</a></span>, <span><a
+                                    href={"tel:" + this.state.currentContact.phone}>{this.state.currentContact.phone}</a></span>
+                                    <br /> {this.state.currentContact.address}</p>
+                                <MapWithAMarker
+                                    googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwTUc-pTmnfUJn4kSpS09JQhN-_Rz_SdE&v=3.exp&libraries=geometry,drawing,places"
+                                    loadingElement={<div style={{ height: `100%` }} />}
+                                    containerElement={<div style={{ height: `300px` }} />}
+                                    mapElement={<div style={{ height: `100%` }} />}
+                                    isMarkerShown />
 
-                                <GoogleMapReact
-                                    bootstrapURLKeys={{key: "AIzaSyAwTUc-pTmnfUJn4kSpS09JQhN-_Rz_SdE"}}
-                                    defaultCenter={{lat: 43.2368614, lng: 76.9154467}}
-                                    defaultZoom={16}
-                                >
-                                    <AnyReactComponent
-                                        lat={43.2368614}
-                                        lng={76.9154467}
-                                        text={'Kreyser Avrora'}
-                                    />
-
-                                </GoogleMapReact>
 
 
                             </div>
@@ -681,7 +704,7 @@ class Index extends React.Component {
                         </div>
                     </div>
                 </div>
-                <Footer contacts={contacts} bgColor="#000"/>
+                <Footer contacts={this.state.currentContact} bgColor="#000" />
             </div>
         );
     }
@@ -689,6 +712,6 @@ class Index extends React.Component {
 
 export default withI18next(["translation"])
 
-(
+    (
     Index
-)
+    )
